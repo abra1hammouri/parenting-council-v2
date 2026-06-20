@@ -2,12 +2,10 @@ import { useEffect, useState } from 'react';
 
 /**
  * Design Philosophy: Warm Educational Minimalism
- * - Hero section with text overlay (no background image)
+ * - Hero section with image positioned to show top beige area as background
+ * - Rest of image appears below the text
  * - Typewriter animation cycling through core parenting principles
  * - Raqaa font for title and animated text (bold, impactful)
- * - Warm color palette: terracotta (#D97757), sage green (#A8B8A8), cream (#FAFAF8)
- * - Arabic-optimized typography
- * - Generous whitespace and asymmetric layout
  */
 
 const phrases = [
@@ -34,24 +32,20 @@ export default function Home() {
     let timer: NodeJS.Timeout;
 
     if (!isDeleting && charIndex < currentPhrase.length) {
-      // Typing phase
       timer = setTimeout(() => {
         setDisplayedText(currentPhrase.substring(0, charIndex + 1));
         setCharIndex(charIndex + 1);
       }, typingSpeed);
     } else if (!isDeleting && charIndex === currentPhrase.length) {
-      // Pause before deleting
       timer = setTimeout(() => {
         setIsDeleting(true);
       }, delayBeforeDelete);
     } else if (isDeleting && charIndex > 0) {
-      // Deleting phase
       timer = setTimeout(() => {
         setDisplayedText(currentPhrase.substring(0, charIndex - 1));
         setCharIndex(charIndex - 1);
       }, typingSpeed);
     } else if (isDeleting && charIndex === 0) {
-      // Move to next phrase
       timer = setTimeout(() => {
         setIsDeleting(false);
         setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
@@ -81,11 +75,22 @@ export default function Home() {
 
       {/* Hero Section */}
       <main className="flex-1 pt-16">
-        <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-secondary/30 to-background">
+        <section 
+          className="relative w-full min-h-screen flex items-center justify-center"
+          style={{
+            backgroundImage: 'url(/manus-storage/family-video-call_02b16b7d.jpg)',
+            backgroundPosition: 'center 0',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          {/* Subtle overlay for text readability */}
+          <div className="absolute inset-0 bg-white/10"></div>
+
           {/* Content Overlay */}
-          <div className="relative z-10 container max-w-4xl mx-auto px-4 text-center">
+          <div className="relative z-10 container max-w-4xl mx-auto px-4 text-center pt-20">
             <h1 
-              className="text-6xl md:text-8xl font-black text-primary mb-12 leading-tight"
+              className="text-6xl md:text-8xl font-black text-primary mb-12 leading-tight drop-shadow-lg"
               style={{ fontFamily: "'Raqaa', serif" }}
             >
               مجلس التربية الممتد
@@ -94,7 +99,7 @@ export default function Home() {
             {/* Typewriter Text */}
             <div className="h-32 flex items-center justify-center mb-16">
               <p 
-                className="text-4xl md:text-5xl font-black text-foreground min-h-24"
+                className="text-4xl md:text-5xl font-black text-foreground min-h-24 drop-shadow-md"
                 style={{ fontFamily: "'Raqaa', serif" }}
               >
                 <span className="inline-block">{displayedText}</span>
@@ -106,7 +111,7 @@ export default function Home() {
           {/* Scroll Indicator */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
             <div className="animate-bounce">
-              <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-primary drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </div>
