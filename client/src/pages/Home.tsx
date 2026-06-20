@@ -67,7 +67,7 @@ export default function Home() {
           <div className="flex gap-8">
             <a href="#" className="text-foreground hover:text-primary transition-colors duration-200">الرئيسية</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors duration-200">عن المجلس</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors duration-200">الموارد</a>
+            <a href="/files" className="text-foreground hover:text-primary transition-colors duration-200">الملفات</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors duration-200">اتصل بنا</a>
           </div>
         </nav>
@@ -81,7 +81,7 @@ export default function Home() {
             backgroundImage: 'url(/manus-storage/family-video-call_02b16b7d.jpg)',
             backgroundPosition: 'center 0',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'repeat-y'
           }}
         >
           {/* Subtle overlay for text readability */}
