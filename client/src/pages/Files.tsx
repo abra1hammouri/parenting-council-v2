@@ -13,7 +13,7 @@ interface Card {
   title: string;
   description: string;
   image: string;
-  links: { label: string; url: string }[];
+  links: { label: string; url: string; target?: string }[];
 }
 
 const cards: Card[] = [
@@ -23,45 +23,49 @@ const cards: Card[] = [
     description: 'يحتوي الكتاب على شرح الدكتور أحمد ياسر رزة للفصول الأولى الثلاثة من كتاب الانضباط الإيجابي حيث ستتمكن من قراءة الفصول وتعليق الدكتور وشرحه بين علامات الجملة المعترضة والكتاب ملخص شامل لأهم المواضيع التي ذكرت خلال المحاضرات',
     image: '/manus-storage/card-1-book_fe43273a.png',
     links: [
-      { label: 'اقرأ الكتاب', url: '#' },
-      { label: 'حمّل PDF', url: '#' }
+      { label: 'اقرأ الكتاب', url: 'https://drive.google.com/drive/folders/1ygJGvIAL5Hrf5yKtofUmSgXEsuvIa07f', target: '_blank' },
+      { label: 'حمّل PDF', url: 'https://drive.google.com/drive/folders/1ygJGvIAL5Hrf5yKtofUmSgXEsuvIa07f', target: '_blank' }
     ]
   },
   // Placeholder cards - will be updated with user data
   {
     id: 2,
-    title: 'البطاقة الثانية',
-    description: 'في انتظار المحتوى...',
-    image: '/manus-storage/card-1-book_fe43273a.png',
+    title: 'تفريغات أحمد حجازي',
+    description: 'تفريغات المحاضرات التفصيلية أي كل كلمة ستجدها موجودة والملفات منظمة حسب أشهر المجلس الستة',
+    image: '/manus-storage/card-2-transcripts_ec0f3d4b.png',
     links: [
-      { label: 'المزيد', url: '#' }
+      { label: 'اقرأ التفريغات', url: 'https://drive.google.com/drive/folders/1QEm2n39xnvBcPQ4I0cu1oABX_pxg98Rh', target: '_blank' },
+      { label: 'حمّل الملفات', url: 'https://drive.google.com/drive/folders/1QEm2n39xnvBcPQ4I0cu1oABX_pxg98Rh', target: '_blank' }
     ]
   },
   {
     id: 3,
-    title: 'البطاقة الثالثة',
-    description: 'في انتظار المحتوى...',
-    image: '/manus-storage/card-1-book_fe43273a.png',
+    title: 'التكليفات',
+    description: 'جميع التكليفات من مقالات وكتيبات مرتبة ومترجمة والفيديوهات محملة',
+    image: '/manus-storage/card-3-assignments_040cfc66.png',
     links: [
-      { label: 'المزيد', url: '#' }
+      { label: 'اطلع على التكليفات', url: 'https://drive.google.com/drive/folders/1PHGwHkoD9wSASfobJ2zZ-ivlhoNTec8A', target: '_blank' },
+      { label: 'حمّل الملفات', url: 'https://drive.google.com/drive/folders/1PHGwHkoD9wSASfobJ2zZ-ivlhoNTec8A', target: '_blank' }
     ]
   },
   {
     id: 4,
-    title: 'البطاقة الرابعة',
-    description: 'في انتظار المحتوى...',
+    title: 'بودكاست محمود حرب',
+    description: 'العديد من الملخصات الصوتية والفيديوهات الرائعة المصنوعة بأدوات الذكاء الاصطناعي',
     image: '/manus-storage/card-1-book_fe43273a.png',
     links: [
-      { label: 'المزيد', url: '#' }
+      { label: 'استمع للبودكاست', url: 'https://drive.google.com/drive/folders/1fw9Urfa6y1J5TvX97Lifrs6kVR766Mlm?usp=drive_link', target: '_blank' },
+      { label: 'شاهد الفيديوهات', url: 'https://drive.google.com/drive/folders/1fw9Urfa6y1J5TvX97Lifrs6kVR766Mlm?usp=drive_link', target: '_blank' }
     ]
   },
   {
     id: 5,
-    title: 'البطاقة الخامسة',
-    description: 'في انتظار المحتوى...',
+    title: 'تلخيصات مريم طارق',
+    description: 'تلخيصات لكل محاضرة بأسلوب مميز',
     image: '/manus-storage/card-1-book_fe43273a.png',
     links: [
-      { label: 'المزيد', url: '#' }
+      { label: 'اقرأ التلخيصات', url: 'https://drive.google.com/drive/folders/1tnq72eMY2bGU4BTo-oNcVRi5Gf5HjUfo', target: '_blank' },
+      { label: 'حمّل الملفات', url: 'https://drive.google.com/drive/folders/1tnq72eMY2bGU4BTo-oNcVRi5Gf5HjUfo', target: '_blank' }
     ]
   }
 ];
@@ -140,6 +144,8 @@ export default function Files() {
                       <a
                         key={idx}
                         href={link.url}
+                        target={link.target || '_self'}
+                        rel="noopener noreferrer"
                         className="inline-block px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105"
                       >
                         {link.label}
