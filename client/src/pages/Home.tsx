@@ -78,7 +78,7 @@ export default function Home() {
         <section 
           className="relative w-full min-h-screen flex items-center justify-center"
           style={{
-            backgroundImage: 'url(/manus-storage/family-video-call_02b16b7d.jpg)',
+            backgroundImage: 'url(/manus-storage/family-video-call_14d065a6.jpg)',
             backgroundPosition: 'center 0',
             backgroundSize: 'cover',
             backgroundRepeat: 'repeat-y'

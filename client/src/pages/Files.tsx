@@ -60,7 +60,7 @@ const cards: Card[] = [
     id: 5,
     title: 'تلخيصات مريم طارق',
     description: 'تلخيصات لكل محاضرة بأسلوب مميز',
-    image: '/manus-storage/card-5-summaries_4963b28b.png',
+    image: '/manus-storage/card-2-transcripts_ec0f3d4b.png',
     links: [
       { label: 'اطلع على التلخيصات', url: 'https://drive.google.com/drive/folders/1tnq72eMY2bGU4BTo-oNcVRi5Gf5HjUfo', target: '_blank' }
     ]
@@ -113,11 +113,11 @@ export default function Files() {
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Card Image */}
-                <div className="relative h-64 overflow-hidden bg-secondary flex items-center justify-center">
+                <div className="relative h-64 overflow-hidden bg-secondary">
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
