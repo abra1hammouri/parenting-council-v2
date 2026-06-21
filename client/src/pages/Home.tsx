@@ -65,10 +65,10 @@ export default function Home() {
             مجلس التربية الممتد
           </div>
           <div className="flex gap-8">
-            <a href="#" className="text-foreground hover:text-primary transition-colors duration-200">الرئيسية</a>
+            <a href="/" className="text-foreground hover:text-primary transition-colors duration-200">الرئيسية</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors duration-200">عن المجلس</a>
             <a href="/files" className="text-foreground hover:text-primary transition-colors duration-200">الملفات</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors duration-200">اتصل بنا</a>
+            <a href="/contact" className="text-foreground hover:text-primary transition-colors duration-200">اتصل بنا</a>
           </div>
         </nav>
       </header>

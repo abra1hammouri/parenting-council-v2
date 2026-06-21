@@ -34,8 +34,7 @@ const cards: Card[] = [
     description: 'تفريغات المحاضرات التفصيلية أي كل كلمة ستجدها موجودة والملفات منظمة حسب أشهر المجلس الستة',
     image: '/manus-storage/card-2-transcripts_ec0f3d4b.png',
     links: [
-      { label: 'اقرأ التفريغات', url: 'https://drive.google.com/drive/folders/1QEm2n39xnvBcPQ4I0cu1oABX_pxg98Rh', target: '_blank' },
-      { label: 'حمّل الملفات', url: 'https://drive.google.com/drive/folders/1QEm2n39xnvBcPQ4I0cu1oABX_pxg98Rh', target: '_blank' }
+      { label: 'اطلع على التفريغات', url: 'https://drive.google.com/drive/folders/1QEm2n39xnvBcPQ4I0cu1oABX_pxg98Rh', target: '_blank' }
     ]
   },
   {
@@ -54,18 +53,16 @@ const cards: Card[] = [
     description: 'العديد من الملخصات الصوتية والفيديوهات الرائعة المصنوعة بأدوات الذكاء الاصطناعي',
     image: '/manus-storage/card-1-book_fe43273a.png',
     links: [
-      { label: 'استمع للبودكاست', url: 'https://drive.google.com/drive/folders/1fw9Urfa6y1J5TvX97Lifrs6kVR766Mlm?usp=drive_link', target: '_blank' },
-      { label: 'شاهد الفيديوهات', url: 'https://drive.google.com/drive/folders/1fw9Urfa6y1J5TvX97Lifrs6kVR766Mlm?usp=drive_link', target: '_blank' }
+      { label: 'اطلع على البودكاست', url: 'https://drive.google.com/drive/folders/1fw9Urfa6y1J5TvX97Lifrs6kVR766Mlm?usp=drive_link', target: '_blank' }
     ]
   },
   {
     id: 5,
     title: 'تلخيصات مريم طارق',
     description: 'تلخيصات لكل محاضرة بأسلوب مميز',
-    image: '/manus-storage/card-1-book_fe43273a.png',
+    image: '/manus-storage/card-5-summaries_4963b28b.png',
     links: [
-      { label: 'اقرأ التلخيصات', url: 'https://drive.google.com/drive/folders/1tnq72eMY2bGU4BTo-oNcVRi5Gf5HjUfo', target: '_blank' },
-      { label: 'حمّل الملفات', url: 'https://drive.google.com/drive/folders/1tnq72eMY2bGU4BTo-oNcVRi5Gf5HjUfo', target: '_blank' }
+      { label: 'اطلع على التلخيصات', url: 'https://drive.google.com/drive/folders/1tnq72eMY2bGU4BTo-oNcVRi5Gf5HjUfo', target: '_blank' }
     ]
   }
 ];
@@ -116,11 +113,11 @@ export default function Files() {
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Card Image */}
-                <div className="relative h-64 overflow-hidden bg-secondary">
+                <div className="relative h-64 overflow-hidden bg-secondary flex items-center justify-center">
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-110"
                   />
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
