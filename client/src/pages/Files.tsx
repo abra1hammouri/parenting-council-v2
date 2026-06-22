@@ -42,7 +42,7 @@ const cards: Card[] = [
     description: 'جميع التكليفات من مقالات وكتيبات مرتبة ومترجمة والفيديوهات محملة',
     image: '/manus-storage/card-3-assignments_040cfc66.png',
     links: [
-      { label: 'اطلع على التكليفات', url: 'https://drive.google.com/drive/folders/1PHGwHkoD9wSASfobJ2zZ-ivlhoNTec8A', target: '_blank' }
+      { label: 'اطلع على التكليفات', url: 'https://drive.google.com/file/d/1tStT0Y6UXxePcj77oa04-A9nmPUtUI6l/view?usp=drivesdk', target: '_blank' }
     ]
   },
   {
