@@ -42,14 +42,14 @@ export default function Contact() {
             {/* Right Side - Contact Options */}
             <div className="w-full lg:w-96 space-y-4">
               {/* WhatsApp Contact */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <div className="bg-white/30 backdrop-blur-md rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow border border-white/40">
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-green-100 rounded-full flex-shrink-0">
                     <MessageCircle className="w-6 h-6 text-green-600" />
                   </div>
                   
                   <div className="flex-1 min-w-0">
-                    <h2 className="text-lg font-bold text-primary truncate">
+                    <h2 className="text-lg font-bold text-white drop-shadow-lg truncate">
                       تواصل عبر WhatsApp
                     </h2>
                     
@@ -67,14 +67,14 @@ export default function Contact() {
               </div>
 
               {/* YouTube Channel */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <div className="bg-white/30 backdrop-blur-md rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow border border-white/40">
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-red-100 rounded-full flex-shrink-0">
                     <Youtube className="w-6 h-6 text-red-600" />
                   </div>
                   
                   <div className="flex-1 min-w-0">
-                    <h2 className="text-lg font-bold text-primary truncate">
+                    <h2 className="text-lg font-bold text-white drop-shadow-lg truncate">
                       قناة اليوتيوب
                     </h2>
                     
@@ -92,14 +92,14 @@ export default function Contact() {
               </div>
 
               {/* Facebook Page */}
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+              <div className="bg-white/30 backdrop-blur-md rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow border border-white/40">
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-blue-100 rounded-full flex-shrink-0">
                     <Facebook className="w-6 h-6 text-blue-600" />
                   </div>
                   
                   <div className="flex-1 min-w-0">
-                    <h2 className="text-lg font-bold text-primary truncate">
+                    <h2 className="text-lg font-bold text-white drop-shadow-lg truncate">
                       صفحة الفيسبوك
                     </h2>
                     
