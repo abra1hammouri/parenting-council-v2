@@ -118,16 +118,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Values Section - Coming Soon */}
-        <section className="py-20 bg-secondary/50">
-          <div className="container">
-            <h2 className="text-4xl font-bold text-center mb-12 text-foreground" style={{ fontFamily: "'Raqaa', serif" }}>
-              قيمنا الأساسية
-            </h2>
-            <p className="text-center text-muted-foreground text-lg">
-              سيتم إضافة المزيد من الأقسام قريباً...
-            </p>
-          </div>
+        {/* Continuation Section */}
+        <section className="w-full">
+          <img 
+            src="/manus-storage/home-continuation_c595e8a1.webp" 
+            alt="تكملة الصورة" 
+            className="w-full h-auto block"
+          />
         </section>
       </main>
 
