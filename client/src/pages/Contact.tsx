@@ -2,8 +2,8 @@ import { MessageCircle, Youtube, Facebook } from 'lucide-react';
 
 /**
  * Design Philosophy: Warm Educational Minimalism
- * - Contact page with image and content side-by-side layout
- * - Image on left, contact options on right
+ * - Contact page with full background image
+ * - Contact options overlay on bottom right
  * - Raqaa font for headings
  */
 
@@ -15,125 +15,102 @@ export default function Contact() {
   const facebookLink = 'https://www.facebook.com/share/1EFELisGn8/';
 
   return (
-    <div className="min-h-screen bg-secondary/30">
-      {/* Hero Section */}
-      <div className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 
-            className="text-5xl sm:text-6xl font-black text-primary mb-6"
-            style={{ fontFamily: "'Raqaa', serif" }}
-          >
-            تواصل معنا
-          </h1>
-          <p className="text-lg text-muted-foreground mb-12">
-            نحن هنا للإجابة على جميع استفساراتك وتقديم الدعم الذي تحتاجه
-          </p>
-        </div>
-      </div>
+    <div 
+      className="min-h-screen relative bg-cover bg-center"
+      style={{
+        backgroundImage: 'url(/manus-storage/contact-image_31029b27.png)',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/20"></div>
 
-      {/* Main Content Section */}
-      <div className="pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Side - Image */}
-            <div className="flex justify-center lg:justify-start">
-              <div className="rounded-2xl overflow-hidden shadow-lg max-w-md w-full">
-                <img 
-                  src="/manus-storage/contact-image_31029b27.png"
-                  alt="نحن جميعاً في نفس القارب"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
+      {/* Content */}
+      <div className="relative z-10 min-h-screen flex flex-col justify-end pb-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto w-full">
+          <div className="flex flex-col lg:flex-row justify-between items-end gap-8">
+            {/* Left Side - Empty or Title */}
+            <div className="hidden lg:block flex-1">
+              <h1 
+                className="text-5xl sm:text-6xl font-black text-white drop-shadow-lg"
+                style={{ fontFamily: "'Raqaa', serif" }}
+              >
+                تواصل معنا
+              </h1>
             </div>
 
             {/* Right Side - Contact Options */}
-            <div className="space-y-8">
+            <div className="w-full lg:w-96 space-y-4">
               {/* WhatsApp Contact */}
-              <div className="bg-secondary rounded-2xl shadow-lg p-8">
-                <div className="flex items-start gap-4">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div className="flex items-center gap-4">
                   <div className="p-3 bg-green-100 rounded-full flex-shrink-0">
-                    <MessageCircle className="w-8 h-8 text-green-600" />
+                    <MessageCircle className="w-6 h-6 text-green-600" />
                   </div>
                   
-                  <div className="flex-1">
-                    <h2 className="text-2xl font-bold text-primary mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-lg font-bold text-primary truncate">
                       تواصل عبر WhatsApp
                     </h2>
                     
-                    <p className="text-muted-foreground mb-6">
-                      يمكنك التواصل معنا مباشرة عبر WhatsApp للحصول على إجابات سريعة وفعالة
-                    </p>
-
                     <a
                       href={whatsappLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                      className="inline-flex items-center gap-2 mt-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 text-sm"
                     >
-                      <MessageCircle className="w-5 h-5" />
-                      <span>فتح WhatsApp</span>
+                      <MessageCircle className="w-4 h-4" />
+                      <span>تواصل</span>
                     </a>
-
-                    <p className="text-sm text-muted-foreground mt-4">
-                      رقم الهاتف: {displayNumber}
-                    </p>
                   </div>
                 </div>
               </div>
 
               {/* YouTube Channel */}
-              <div className="bg-secondary rounded-2xl shadow-lg p-8">
-                <div className="flex items-start gap-4">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div className="flex items-center gap-4">
                   <div className="p-3 bg-red-100 rounded-full flex-shrink-0">
-                    <Youtube className="w-8 h-8 text-red-600" />
+                    <Youtube className="w-6 h-6 text-red-600" />
                   </div>
                   
-                  <div className="flex-1">
-                    <h2 className="text-2xl font-bold text-primary mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-lg font-bold text-primary truncate">
                       قناة اليوتيوب
                     </h2>
                     
-                    <p className="text-muted-foreground mb-6">
-                      اشترك في قناتنا على اليوتيوب لمتابعة أحدث المحاضرات والدروس
-                    </p>
-
                     <a
                       href={youtubeLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                      className="inline-flex items-center gap-2 mt-2 px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 text-sm"
                     >
-                      <Youtube className="w-5 h-5" />
-                      <span>زيارة القناة</span>
+                      <Youtube className="w-4 h-4" />
+                      <span>تابع</span>
                     </a>
                   </div>
                 </div>
               </div>
 
               {/* Facebook Page */}
-              <div className="bg-secondary rounded-2xl shadow-lg p-8">
-                <div className="flex items-start gap-4">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div className="flex items-center gap-4">
                   <div className="p-3 bg-blue-100 rounded-full flex-shrink-0">
-                    <Facebook className="w-8 h-8 text-blue-600" />
+                    <Facebook className="w-6 h-6 text-blue-600" />
                   </div>
                   
-                  <div className="flex-1">
-                    <h2 className="text-2xl font-bold text-primary mb-2">
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-lg font-bold text-primary truncate">
                       صفحة الفيسبوك
                     </h2>
                     
-                    <p className="text-muted-foreground mb-6">
-                      تابعنا على الفيسبوك للبقاء على اتصال مستمر مع مجتمعنا
-                    </p>
-
                     <a
                       href={facebookLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                      className="inline-flex items-center gap-2 mt-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 text-sm"
                     >
-                      <Facebook className="w-5 h-5" />
-                      <span>زيارة الصفحة</span>
+                      <Facebook className="w-4 h-4" />
+                      <span>تابع</span>
                     </a>
                   </div>
                 </div>
