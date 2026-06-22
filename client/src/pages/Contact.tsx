@@ -12,7 +12,7 @@ export default function Contact() {
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-accent via-background to-background">
+    <div className="min-h-screen bg-secondary/30">
       {/* Hero Section */}
       <div className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
@@ -31,7 +31,7 @@ export default function Contact() {
       {/* Contact Section */}
       <div className="pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-lg p-8 sm:p-12">
+          <div className="bg-secondary rounded-2xl shadow-lg p-8 sm:p-12">
             {/* WhatsApp Contact */}
             <div className="flex flex-col items-center text-center">
               <div className="mb-6 p-4 bg-green-100 rounded-full">
