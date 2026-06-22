@@ -8,8 +8,9 @@ import { MessageCircle } from 'lucide-react';
  */
 
 export default function Contact() {
-  const whatsappNumber = '+201063070272';
+  const whatsappNumber = '201063070272';
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
+  const displayNumber = '+201063070272';
 
   return (
     <div className="min-h-screen bg-secondary/30">
@@ -57,7 +58,7 @@ export default function Contact() {
               </a>
 
               <p className="text-sm text-muted-foreground mt-6">
-                رقم الهاتف: {whatsappNumber}
+                رقم الهاتف: {displayNumber}
               </p>
             </div>
 
