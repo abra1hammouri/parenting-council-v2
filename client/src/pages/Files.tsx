@@ -24,7 +24,7 @@ const cards: Card[] = [
     image: '/manus-storage/card-1-book_fe43273a.png',
     links: [
       { label: 'اقرأ الكتاب', url: 'https://drive.google.com/drive/folders/1ygJGvIAL5Hrf5yKtofUmSgXEsuvIa07f', target: '_blank' },
-      { label: 'حمّل PDF', url: 'https://drive.google.com/drive/folders/1ygJGvIAL5Hrf5yKtofUmSgXEsuvIa07f', target: '_blank' }
+      { label: 'حمّل الملف', url: 'https://drive.google.com/drive/folders/1ygJGvIAL5Hrf5yKtofUmSgXEsuvIa07f', target: '_blank' }
     ]
   },
   // Placeholder cards - will be updated with user data
@@ -99,7 +99,7 @@ export default function Files() {
               الملفات والموارد
             </h1>
             <p className="text-lg text-muted-foreground">
-              مجموعة شاملة من الموارد التعليمية والكتب والمحاضرات
+              مجموعة شاملة من الملخصات والتفريغات للمحاضرات
             </p>
           </div>
 
