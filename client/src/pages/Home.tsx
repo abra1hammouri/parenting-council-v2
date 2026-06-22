@@ -70,7 +70,7 @@ export default function Home() {
         {/* Hero Section with Title and Typewriter */}
         <section className="relative w-full min-h-screen flex flex-col items-center justify-start pt-20"
           style={{
-            background: 'linear-gradient(to bottom, #F5E6D3 0%, #F5E6D3 25%, transparent 25%)',
+            background: 'linear-gradient(to bottom, #F8E6BC 0%, #F8E6BC 25%, transparent 25%)',
           }}
         >
           {/* Title */}
