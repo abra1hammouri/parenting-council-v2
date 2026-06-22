@@ -23,8 +23,8 @@ const cards: Card[] = [
     description: 'يحتوي الكتاب على شرح الدكتور أحمد ياسر رزة للفصول الأولى الثلاثة من كتاب الانضباط الإيجابي حيث ستتمكن من قراءة الفصول وتعليق الدكتور وشرحه بين علامات الجملة المعترضة والكتاب ملخص شامل لأهم المواضيع التي ذكرت خلال المحاضرات',
     image: '/manus-storage/card-1-book_fe43273a.png',
     links: [
-      { label: 'اقرأ الكتاب', url: 'https://drive.google.com/drive/folders/1ygJGvIAL5Hrf5yKtofUmSgXEsuvIa07f', target: '_blank' },
-      { label: 'حمّل الملف', url: 'https://drive.google.com/drive/folders/1ygJGvIAL5Hrf5yKtofUmSgXEsuvIa07f', target: '_blank' }
+      { label: 'اقرأ الكتاب', url: 'https://drive.google.com/file/d/17Dqs9045bDo1rt4dFxfdpCMY6FcOF8DS/view?usp=drivesdk', target: '_blank' },
+      { label: 'حمّل الملف', url: 'https://drive.google.com/file/d/17Dqs9045bDo1rt4dFxfdpCMY6FcOF8DS/view?usp=drivesdk', target: '_blank' }
     ]
   },
   // Placeholder cards - will be updated with user data
