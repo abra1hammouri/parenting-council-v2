@@ -2,23 +2,18 @@ import { useState } from 'react';
 
 /**
  * Design Philosophy: Warm Educational Minimalism
- * - Files page with resource cards
- * - Each card has image as background with content overlay
+ * - Files page with 5 resource cards
+ * - Card layout inspired by Strevora template
  * - Raqaa font for headings
+ * - Hover effects with smooth transitions
  */
-
-interface Link {
-  label: string;
-  url: string;
-  target?: string;
-}
 
 interface Card {
   id: number;
   title: string;
   description: string;
   image: string;
-  links: Link[];
+  links: { label: string; url: string; target?: string }[];
 }
 
 const cards: Card[] = [
@@ -26,28 +21,29 @@ const cards: Card[] = [
     id: 1,
     title: 'كتاب المجلس الجزء الأول',
     description: 'يحتوي الكتاب على شرح الدكتور أحمد ياسر رزة للفصول الأولى الثلاثة من كتاب الانضباط الإيجابي حيث ستتمكن من قراءة الفصول وتعليق الدكتور وشرحه بين علامات الجملة المعترضة والكتاب ملخص شامل لأهم المواضيع التي ذكرت خلال المحاضرات',
-    image: '/manus-storage/card1_b3c7f8e2.png',
+    image: '/manus-storage/card-1-book_fe43273a.png',
     links: [
-      { label: 'اطلع على الملفات', url: 'https://drive.google.com/drive/folders/1ygJGvIAL5Hrf5yKtofUmSgXEsuvIa07f', target: '_blank' },
-      { label: 'حمّل الملفات', url: 'https://drive.google.com/drive/folders/1ygJGvIAL5Hrf5yKtofUmSgXEsuvIa07f', target: '_blank' }
+      { label: 'اقرأ الكتاب', url: 'https://drive.google.com/drive/folders/1ygJGvIAL5Hrf5yKtofUmSgXEsuvIa07f', target: '_blank' },
+      { label: 'حمّل PDF', url: 'https://drive.google.com/drive/folders/1ygJGvIAL5Hrf5yKtofUmSgXEsuvIa07f', target: '_blank' }
     ]
   },
+  // Placeholder cards - will be updated with user data
   {
     id: 2,
     title: 'تفريغات أحمد حجازي',
     description: 'تفريغات المحاضرات التفصيلية أي كل كلمة ستجدها موجودة والملفات منظمة حسب أشهر المجلس الستة',
-    image: '/manus-storage/card2_a1d4e5f3.png',
+    image: '/manus-storage/card-2-transcripts_ec0f3d4b.png',
     links: [
-      { label: 'اطلع على الملفات', url: 'https://drive.google.com/drive/folders/1QEm2n39xnvBcPQ4I0cu1oABX_pxg98Rh', target: '_blank' }
+      { label: 'اطلع على التفريغات', url: 'https://drive.google.com/drive/folders/1QEm2n39xnvBcPQ4I0cu1oABX_pxg98Rh', target: '_blank' }
     ]
   },
   {
     id: 3,
     title: 'التكليفات',
     description: 'جميع التكليفات من مقالات وكتيبات مرتبة ومترجمة والفيديوهات محملة',
-    image: '/manus-storage/card3_c2b5d6e4.png',
+    image: '/manus-storage/card-3-assignments_040cfc66.png',
     links: [
-      { label: 'اطلع على الملفات', url: 'https://drive.google.com/drive/folders/1PHGwHkoD9wSASfobJ2zZ-ivlhoNTec8A', target: '_blank' },
+      { label: 'اطلع على التكليفات', url: 'https://drive.google.com/drive/folders/1PHGwHkoD9wSASfobJ2zZ-ivlhoNTec8A', target: '_blank' },
       { label: 'حمّل الملفات', url: 'https://drive.google.com/drive/folders/1PHGwHkoD9wSASfobJ2zZ-ivlhoNTec8A', target: '_blank' }
     ]
   },
@@ -55,18 +51,18 @@ const cards: Card[] = [
     id: 4,
     title: 'بودكاست محمود حرب',
     description: 'العديد من الملخصات الصوتية والفيديوهات الرائعة المصنوعة بأدوات الذكاء الاصطناعي',
-    image: '/manus-storage/card4_d3c6e7f5.png',
+    image: '/manus-storage/card-4-podcast_2a8a7a36.png',
     links: [
-      { label: 'اطلع على الملفات', url: 'https://drive.google.com/drive/folders/1fw9Urfa6y1J5TvX97Lifrs6kVR766Mlm?usp=drive_link', target: '_blank' }
+      { label: 'اطلع على البودكاست', url: 'https://drive.google.com/drive/folders/1fw9Urfa6y1J5TvX97Lifrs6kVR766Mlm?usp=drive_link', target: '_blank' }
     ]
   },
   {
     id: 5,
     title: 'تلخيصات مريم طارق',
     description: 'تلخيصات لكل محاضرة بأسلوب مميز',
-    image: '/manus-storage/card5_e4d7f8g6.png',
+    image: '/manus-storage/card-5-summaries_4963b28b.png',
     links: [
-      { label: 'اطلع على الملفات', url: 'https://drive.google.com/drive/folders/1tnq72eMY2bGU4BTo-oNcVRi5Gf5HjUfo', target: '_blank' }
+      { label: 'اطلع على التلخيصات', url: 'https://drive.google.com/drive/folders/1tnq72eMY2bGU4BTo-oNcVRi5Gf5HjUfo', target: '_blank' }
     ]
   }
 ];
@@ -86,7 +82,7 @@ export default function Files() {
             <a href="/" className="text-foreground hover:text-primary transition-colors duration-200">الرئيسية</a>
             <a href="#" className="text-foreground hover:text-primary transition-colors duration-200">عن المجلس</a>
             <a href="/files" className="text-primary font-semibold transition-colors duration-200">الملفات</a>
-            <a href="/contact" className="text-foreground hover:text-primary transition-colors duration-200">اتصل بنا</a>
+            <a href="#" className="text-foreground hover:text-primary transition-colors duration-200">اتصل بنا</a>
           </div>
         </nav>
       </header>
@@ -112,41 +108,42 @@ export default function Files() {
             {cards.map((card) => (
               <div
                 key={card.id}
-                className="group relative overflow-hidden rounded-xl h-96 shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
+                className="group relative overflow-hidden rounded-xl bg-secondary shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
                 onMouseEnter={() => setHoveredCard(card.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                {/* Background Image */}
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
+                {/* Card Image */}
+                <div className="relative h-64 overflow-hidden bg-secondary flex items-center justify-center">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+                  />
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-                {/* Content Box - Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-secondary via-secondary/95 to-secondary/80 transform transition-all duration-300">
+                {/* Card Content */}
+                <div className="p-6">
                   <h3 
-                    className="text-xl font-bold text-primary mb-2"
+                    className="text-xl font-bold text-primary mb-3"
                     style={{ fontFamily: "'Raqaa', serif" }}
                   >
                     {card.title}
                   </h3>
-                  <p className="text-sm text-foreground mb-4 line-clamp-2">
+                  <p className="text-sm text-muted-foreground mb-6 line-clamp-3">
                     {card.description}
                   </p>
 
                   {/* Links */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {card.links.map((link, idx) => (
                       <a
                         key={idx}
                         href={link.url}
                         target={link.target || '_self'}
                         rel="noopener noreferrer"
-                        className="inline-block px-3 py-1.5 bg-primary text-white rounded-lg text-xs font-semibold hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105"
+                        className="inline-block px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105"
                       >
                         {link.label}
                       </a>
