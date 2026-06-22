@@ -1,11 +1,11 @@
-import { MessageCircle, Youtube, Facebook, Mail } from 'lucide-react';
+import { MessageCircle, Youtube, Facebook } from 'lucide-react';
 
 /**
  * Design Philosophy: Warm Educational Minimalism
- * - Contact page with vertical card layout
- * - Minimal, clean design with light background cards
- * - Icons centered at top, clickable as primary action
- * - English names for contact options
+ * - Contact page with boat background image
+ * - Small transparent icon cards on the right
+ * - Image extends across the full page
+ * - Minimal, clean design
  */
 
 export default function Contact() {
@@ -15,37 +15,31 @@ export default function Contact() {
   const facebookLink = 'https://www.facebook.com/share/1EFELisGn8/';
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 py-12 px-4 sm:px-6 lg:px-8">
-      {/* Header Section */}
-      <div className="max-w-6xl mx-auto mb-12 text-center">
-        <h1 
-          className="text-4xl sm:text-5xl font-black text-gray-800 mb-4"
-          style={{ fontFamily: "'Raqaa', serif" }}
-        >
-          Contact Us
-        </h1>
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-          Get in touch with us through any of these channels. We'd love to hear from you!
-        </p>
-      </div>
+    <div 
+      className="min-h-screen relative bg-cover bg-center"
+      style={{
+        backgroundImage: 'url(/manus-storage/contact-image_31029b27.png)',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Overlay for better readability */}
+      <div className="absolute inset-0 bg-black/10"></div>
 
-      {/* Contact Cards Grid */}
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Content */}
+      <div className="relative z-10 min-h-screen flex items-center justify-end px-4 sm:px-6 lg:px-12">
+        <div className="space-y-4 max-w-xs">
           {/* WhatsApp Card */}
           <a
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-8 text-center group cursor-pointer"
+            className="bg-white/20 backdrop-blur-md rounded-full p-4 hover:bg-white/30 transition-all duration-200 flex items-center justify-center group cursor-pointer"
+            title="WhatsApp"
           >
-            <div className="flex justify-center mb-4">
-              <div className="p-4 bg-green-100 rounded-full group-hover:bg-green-200 transition-colors">
-                <MessageCircle className="w-8 h-8 text-green-600" />
-              </div>
+            <div className="flex flex-col items-center">
+              <MessageCircle className="w-6 h-6 text-green-600 group-hover:scale-110 transition-transform" />
+              <p className="text-xs text-gray-700 mt-1 font-semibold">+201063070272</p>
             </div>
-            <h2 className="text-xl font-bold text-gray-800 mb-2">WhatsApp</h2>
-            <p className="text-gray-600 text-sm">+201063070272</p>
           </a>
 
           {/* YouTube Card */}
@@ -53,15 +47,13 @@ export default function Contact() {
             href={youtubeLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-8 text-center group cursor-pointer"
+            className="bg-white/20 backdrop-blur-md rounded-full p-4 hover:bg-white/30 transition-all duration-200 flex items-center justify-center group cursor-pointer"
+            title="YouTube"
           >
-            <div className="flex justify-center mb-4">
-              <div className="p-4 bg-red-100 rounded-full group-hover:bg-red-200 transition-colors">
-                <Youtube className="w-8 h-8 text-red-600" />
-              </div>
+            <div className="flex flex-col items-center">
+              <Youtube className="w-6 h-6 text-red-600 group-hover:scale-110 transition-transform" />
+              <p className="text-xs text-gray-700 mt-1 font-semibold">Ahmed Yaser Roza</p>
             </div>
-            <h2 className="text-xl font-bold text-gray-800 mb-2">YouTube</h2>
-            <p className="text-gray-600 text-sm">Subscribe to our channel</p>
           </a>
 
           {/* Facebook Card */}
@@ -69,27 +61,14 @@ export default function Contact() {
             href={facebookLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-8 text-center group cursor-pointer"
+            className="bg-white/20 backdrop-blur-md rounded-full p-4 hover:bg-white/30 transition-all duration-200 flex items-center justify-center group cursor-pointer"
+            title="Facebook"
           >
-            <div className="flex justify-center mb-4">
-              <div className="p-4 bg-blue-100 rounded-full group-hover:bg-blue-200 transition-colors">
-                <Facebook className="w-8 h-8 text-blue-600" />
-              </div>
+            <div className="flex flex-col items-center">
+              <Facebook className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform" />
+              <p className="text-xs text-gray-700 mt-1 font-semibold">Ahmed Yaser Roza</p>
             </div>
-            <h2 className="text-xl font-bold text-gray-800 mb-2">Facebook</h2>
-            <p className="text-gray-600 text-sm">Follow our page</p>
           </a>
-
-          {/* Email Card */}
-          <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-8 text-center">
-            <div className="flex justify-center mb-4">
-              <div className="p-4 bg-amber-100 rounded-full">
-                <Mail className="w-8 h-8 text-amber-600" />
-              </div>
-            </div>
-            <h2 className="text-xl font-bold text-gray-800 mb-2">Email</h2>
-            <p className="text-gray-600 text-sm">Coming soon</p>
-          </div>
         </div>
       </div>
     </div>
