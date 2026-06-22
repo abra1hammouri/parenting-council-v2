@@ -1,4 +1,4 @@
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, Youtube } from 'lucide-react';
 
 /**
  * Design Philosophy: Warm Educational Minimalism
@@ -11,6 +11,7 @@ export default function Contact() {
   const whatsappNumber = '201063070272';
   const whatsappLink = `https://wa.me/${whatsappNumber}`;
   const displayNumber = '+201063070272';
+  const youtubeLink = 'https://youtube.com/@ahmedyaserroza833?si=7JLFfBnASSTn9J6p';
 
   return (
     <div className="min-h-screen bg-secondary/30">
@@ -60,6 +61,33 @@ export default function Contact() {
               <p className="text-sm text-muted-foreground mt-6">
                 رقم الهاتف: {displayNumber}
               </p>
+            </div>
+
+            {/* YouTube Channel */}
+            <div className="mt-8 pt-8 border-t border-border">
+              <div className="flex flex-col items-center text-center">
+                <div className="mb-6 p-4 bg-red-100 rounded-full">
+                  <Youtube className="w-12 h-12 text-red-600" />
+                </div>
+                
+                <h2 className="text-2xl font-bold text-primary mb-3">
+                  قناة اليوتيوب
+                </h2>
+                
+                <p className="text-muted-foreground mb-8 max-w-md">
+                  اشترك في قناتنا على اليوتيوب لمتابعة أحدث المحاضرات والدروس
+                </p>
+
+                <a
+                  href={youtubeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-red-500 hover:bg-red-600 text-white font-bold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  <Youtube className="w-6 h-6" />
+                  <span>زيارة القناة</span>
+                </a>
+              </div>
             </div>
 
             {/* Additional Info */}
