@@ -1,32 +1,70 @@
+import { useState } from 'react';
+
 /**
  * Shared Navbar Component
  * - Appears on all pages
  * - Logo on the left, navigation links on the right
  * - RTL support for Arabic
+ * - Mobile responsive with hamburger menu
  */
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className="fixed top-0 right-0 left-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-      <nav className="container flex justify-between items-center py-4">
-        <h1 className="text-2xl font-black text-primary" style={{ fontFamily: "'Raqaa', serif" }}>
+      <nav className="container flex justify-between items-center py-3 sm:py-4">
+        {/* Logo */}
+        <h1 className="text-lg sm:text-2xl font-black text-primary" style={{ fontFamily: "'Raqaa', serif" }}>
           مجلس التربية الممتد
         </h1>
-        <div className="flex gap-8">
-          <a href="/" className="text-foreground hover:text-primary transition-colors">
+        
+        {/* Desktop Menu */}
+        <div className="hidden md:flex gap-4 lg:gap-8">
+          <a href="/" className="text-sm lg:text-base text-foreground hover:text-primary transition-colors">
             الرئيسية
           </a>
-          <a href="/about" className="text-foreground hover:text-primary transition-colors">
+          <a href="/about" className="text-sm lg:text-base text-foreground hover:text-primary transition-colors">
             عن المجلس
           </a>
-          <a href="/files" className="text-foreground hover:text-primary transition-colors">
+          <a href="/files" className="text-sm lg:text-base text-foreground hover:text-primary transition-colors">
             الملفات
           </a>
-          <a href="/contact" className="text-foreground hover:text-primary transition-colors">
+          <a href="/contact" className="text-sm lg:text-base text-foreground hover:text-primary transition-colors">
             اتصل بنا
           </a>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden flex flex-col gap-1.5 p-2"
+        >
+          <span className={`h-0.5 w-5 bg-primary transition-all ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`h-0.5 w-5 bg-primary transition-all ${isOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`h-0.5 w-5 bg-primary transition-all ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        </button>
       </nav>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-white border-t border-border">
+          <div className="container flex flex-col gap-3 py-3">
+            <a href="/" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
+              الرئيسية
+            </a>
+            <a href="/about" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
+              عن المجلس
+            </a>
+            <a href="/files" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
+              الملفات
+            </a>
+            <a href="/contact" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
+              اتصل بنا
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
