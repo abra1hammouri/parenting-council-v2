@@ -51,9 +51,9 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen" style={{ background: '#F8E6BC' }}>
       {/* Main Content */}
-      <main className="flex-1 pt-16 flex flex-col">
+      <main className="flex-1 pt-16">
         {/* Title */}
-        <div className="text-center px-4 md:px-8 mb-8">
+        <div className="text-center px-4 md:px-8 mb-12">
           <h1 
             className="text-4xl md:text-6xl font-black text-primary drop-shadow-lg"
             style={{ fontFamily: "'Raqaa', serif" }}
@@ -62,37 +62,31 @@ export default function Home() {
           </h1>
         </div>
 
-        {/* Hero Section - Text and Large Half-Circle Video */}
-        <section className="flex-1 w-full flex flex-col md:flex-row items-stretch justify-between relative overflow-hidden">
-          {/* Left Side - Text Content */}
-          <div className="flex-1 flex flex-col items-center justify-center px-4 md:px-8 py-8 md:py-0 z-10">
-            {/* Typewriter Text */}
-            <div className="min-h-32 flex items-center justify-center">
-              <p 
-                className="text-2xl md:text-4xl font-black text-foreground drop-shadow-md text-center"
-                style={{ fontFamily: "'Raqaa', serif" }}
-              >
-                <span className="inline-block">{displayedText}</span>
-                <span className="inline-block ml-2 animate-pulse text-primary">|</span>
-              </p>
-            </div>
-          </div>
-
-          {/* Right Side - Large Half-Circle Video */}
-          <div className="flex-1 relative flex items-center justify-center md:justify-end">
-            {/* Half-Circle Video Container */}
-            <div 
-              className="relative w-full h-full md:w-auto md:h-auto"
-              style={{
-                clipPath: 'polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%)',
-              }}
+        {/* Typewriter Text Section */}
+        <section className="w-full flex items-center justify-center px-4 md:px-8 mb-16">
+          <div className="min-h-32 flex items-center justify-center">
+            <p 
+              className="text-2xl md:text-4xl font-black text-foreground drop-shadow-md text-center"
+              style={{ fontFamily: "'Raqaa', serif" }}
             >
+              <span className="inline-block">{displayedText}</span>
+              <span className="inline-block ml-2 animate-pulse text-primary">|</span>
+            </p>
+          </div>
+        </section>
+
+        {/* Video Section - Below Text with Professional Edges */}
+        <section className="w-full flex items-center justify-center px-4 md:px-8 pb-16">
+          <div className="relative w-full max-w-4xl">
+            {/* Video Container with Professional Styling */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/40">
               <video 
                 ref={videoRef}
                 autoPlay
                 muted={isMuted}
                 loop
-                className="w-full h-full md:h-screen object-cover"
+                className="w-full h-auto object-cover"
+                style={{ aspectRatio: '16/9' }}
               >
                 <source src="/manus-storage/home-video_8c2f1ef2.mp4" type="video/mp4" />
               </video>
@@ -106,7 +100,7 @@ export default function Home() {
                   videoRef.current.muted = !isMuted;
                 }
               }}
-              className="absolute bottom-8 md:bottom-12 left-8 md:left-1/2 md:translate-x-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all z-20"
+              className="absolute bottom-4 right-4 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all z-10"
               title={isMuted ? 'تشغيل الصوت' : 'إيقاف الصوت'}
             >
               {isMuted ? (
