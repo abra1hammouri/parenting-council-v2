@@ -120,6 +120,12 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Sakkal Majalla', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Aref Ruqaa', serif;
+    font-weight: 700;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
