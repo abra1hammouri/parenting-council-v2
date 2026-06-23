@@ -137,9 +137,9 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-8">
+      <footer className="bg-foreground/20 text-foreground py-3">
         <div className="container text-center">
-          <p>&copy; 2026 مجلس التربية الممتد. جميع الحقوق محفوظة.</p>
+          <p className="text-xs md:text-sm">&copy; 2026 مجلس التربية الممتد. جميع الحقوق محفوظة.</p>
         </div>
       </footer>
 
