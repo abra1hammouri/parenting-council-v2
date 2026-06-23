@@ -105,7 +105,7 @@ export default function Files() {
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Card Image */}
-                <div className="relative h-64 overflow-hidden bg-secondary flex items-center justify-center">
+                <div className="relative h-96 overflow-hidden bg-secondary flex items-center justify-center">
                   <img
                     src={card.image}
                     alt={card.title}
