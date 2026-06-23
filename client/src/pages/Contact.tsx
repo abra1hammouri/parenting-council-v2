@@ -22,7 +22,7 @@ export default function Contact() {
         <h2 className="text-4xl md:text-5xl font-bold text-primary" style={{ fontFamily: "'Raqaa', serif" }}>
           تواصل معنا
         </h2>
-        <p className="text-lg text-gray-600 mt-3">نحن هنا لمساعدتك والإجابة على جميع استفساراتك</p>
+        <p className="text-lg text-gray-600 mt-3">تابعنا على وسائل التواصل الاجتماعي للبقاء على اطلاع دائم</p>
       </div>
 
       {/* Main Content Container */}
