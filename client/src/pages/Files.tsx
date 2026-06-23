@@ -80,7 +80,7 @@ export default function Files() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       {/* Main Content */}
-      <main className="flex-1 pt-32 pb-20" style={{ backgroundColor: '#F8E6BC' }}>
+      <main className="flex-1 pt-32 pb-20 bg-white">
         <div className="container">
           {/* Page Title */}
           <div className="mb-16 text-center">
