@@ -25,14 +25,16 @@ export default function Home() {
 
   useEffect(() => {
     const currentPhrase = phrases[phraseIndex];
-    const speed = isDeleting ? 50 : 100;
+    // Slower speeds: typing 150ms, deleting 80ms
+    const speed = isDeleting ? 80 : 150;
     const delay = setTimeout(() => {
       if (!isDeleting) {
         if (charIndex < currentPhrase.length) {
           setDisplayedText(currentPhrase.slice(0, charIndex + 1));
           setCharIndex(charIndex + 1);
         } else {
-          setTimeout(() => setIsDeleting(true), 2000);
+          // Longer pause before deleting (3 seconds)
+          setTimeout(() => setIsDeleting(true), 3000);
         }
       } else {
         if (charIndex > 0) {
@@ -41,6 +43,8 @@ export default function Home() {
         } else {
           setIsDeleting(false);
           setPhraseIndex((phraseIndex + 1) % phrases.length);
+          // Pause before next phrase (1 second)
+          setTimeout(() => {}, 1000);
         }
       }
     }, speed);
@@ -62,16 +66,38 @@ export default function Home() {
           </h1>
         </div>
 
-        {/* Typewriter Text Section */}
+        {/* Typewriter Text Section - Alternative Style */}
         <section className="w-full flex items-center justify-center px-4 md:px-8 mb-16">
-          <div className="min-h-32 flex items-center justify-center">
-            <p 
-              className="text-2xl md:text-4xl font-black text-foreground drop-shadow-md text-center"
-              style={{ fontFamily: "'Raqaa', serif" }}
-            >
-              <span className="inline-block">{displayedText}</span>
-              <span className="inline-block ml-2 animate-pulse text-primary">|</span>
-            </p>
+          <div className="min-h-40 flex items-center justify-center">
+            <div className="relative inline-block">
+              {/* Glowing background effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-transparent rounded-lg blur-xl -z-10"></div>
+              
+              {/* Text with smooth fade-in effect */}
+              <p 
+                className="text-2xl md:text-4xl font-black text-foreground drop-shadow-md text-center px-8 py-6 transition-all duration-300"
+                style={{ 
+                  fontFamily: "'Raqaa', serif",
+                  minHeight: '120px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <span className="inline-block">{displayedText}</span>
+                {/* Blinking cursor with smooth animation */}
+                <span 
+                  className="inline-block ml-2 text-primary"
+                  style={{
+                    animation: 'blink 1s infinite',
+                    fontSize: '1.2em',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  |
+                </span>
+              </p>
+            </div>
           </div>
         </section>
 
@@ -119,6 +145,18 @@ export default function Home() {
           <p>&copy; 2026 مجلس التربية الممتد. جميع الحقوق محفوظة.</p>
         </div>
       </footer>
+
+      {/* Blinking cursor animation */}
+      <style>{`
+        @keyframes blink {
+          0%, 49% {
+            opacity: 1;
+          }
+          50%, 100% {
+            opacity: 0;
+          }
+        }
+      `}</style>
     </div>
   );
 }
