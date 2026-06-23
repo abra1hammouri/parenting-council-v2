@@ -20,7 +20,7 @@ export default function Navbar() {
         </h1>
         
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-4 lg:gap-8">
+        <div className="hidden lg:flex gap-4 lg:gap-8">
           <a href="/" className="text-sm lg:text-base text-foreground hover:text-primary transition-colors">
             الرئيسية
           </a>
@@ -38,7 +38,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="lg:hidden flex flex-col gap-1.5 p-2"
         >
           <span className={`h-0.5 w-5 bg-primary transition-all ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
           <span className={`h-0.5 w-5 bg-primary transition-all ${isOpen ? 'opacity-0' : ''}`}></span>
@@ -48,7 +48,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-border">
+        <div className="lg:hidden bg-white border-t border-border">
           <div className="container flex flex-col gap-3 py-3">
             <a href="/" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setIsOpen(false)}>
               الرئيسية
