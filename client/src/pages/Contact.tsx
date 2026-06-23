@@ -30,7 +30,7 @@ export default function Contact() {
         <div className="flex flex-col lg:flex-row items-stretch justify-between gap-12">
           
           {/* Left Side - Contact Icons */}
-          <div className="w-full lg:w-1/3 flex flex-col justify-start space-y-12">
+          <div className="w-full lg:w-1/3 flex flex-col justify-start space-y-6">
             {/* WhatsApp Card */}
             <a
               href={whatsappLink}
@@ -39,11 +39,11 @@ export default function Contact() {
               className="flex flex-col items-start group cursor-pointer"
               title="WhatsApp"
             >
-              <div className="bg-green-600 rounded-full p-5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200 shadow-lg">
-                <MessageCircle className="w-7 h-7 text-white" />
+              <div className="bg-green-600 rounded-full p-3 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                <MessageCircle className="w-5 h-5 text-white" />
               </div>
-              <p className="text-2xl font-bold text-gray-800">WhatsApp</p>
-              <p className="text-gray-600 mt-2 text-lg">+201063070272</p>
+              <p className="text-lg font-bold text-gray-800">WhatsApp</p>
+              <p className="text-gray-600 mt-1 text-sm">+201063070272</p>
             </a>
 
             {/* YouTube Card */}
@@ -54,11 +54,11 @@ export default function Contact() {
               className="flex flex-col items-start group cursor-pointer"
               title="YouTube"
             >
-              <div className="bg-red-600 rounded-full p-5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200 shadow-lg">
-                <Youtube className="w-7 h-7 text-white" />
+              <div className="bg-red-600 rounded-full p-3 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                <Youtube className="w-5 h-5 text-white" />
               </div>
-              <p className="text-2xl font-bold text-gray-800">YouTube</p>
-              <p className="text-gray-600 mt-2 text-lg">Ahmed Yaser Roza</p>
+              <p className="text-lg font-bold text-gray-800">YouTube</p>
+              <p className="text-gray-600 mt-1 text-sm">Ahmed Yaser Roza</p>
             </a>
 
             {/* Facebook Card */}
@@ -69,17 +69,17 @@ export default function Contact() {
               className="flex flex-col items-start group cursor-pointer"
               title="Facebook"
             >
-              <div className="bg-blue-600 rounded-full p-5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200 shadow-lg">
-                <Facebook className="w-7 h-7 text-white" />
+              <div className="bg-blue-600 rounded-full p-3 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                <Facebook className="w-5 h-5 text-white" />
               </div>
-              <p className="text-2xl font-bold text-gray-800">Facebook</p>
-              <p className="text-gray-600 mt-2 text-lg">Ahmed Yaser Roza</p>
+              <p className="text-lg font-bold text-gray-800">Facebook</p>
+              <p className="text-gray-600 mt-1 text-sm">Ahmed Yaser Roza</p>
             </a>
           </div>
 
           {/* Right Side - Boat Image */}
           <div className="w-full lg:w-2/3 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-lg">
+            <div className="relative w-full max-w-2xl">
               <img
                 src="/manus-storage/contact-image_31029b27.png"
                 alt="We're all in the same boat"
