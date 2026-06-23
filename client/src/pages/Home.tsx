@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { Volume2, VolumeX } from 'lucide-react';
 
 const phrases = [
   'أنا أحمد وده مجلس التربية الممتد',
@@ -19,6 +20,8 @@ export default function Home() {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const currentPhrase = phrases[phraseIndex];
@@ -52,7 +55,7 @@ export default function Home() {
         {/* Hero Section with Title and Typewriter */}
         <section className="relative w-full min-h-screen flex flex-col items-center justify-start pt-20"
           style={{
-            background: 'linear-gradient(to bottom, #F8E6BC 0%, #F8E6BC 25%, transparent 25%)',
+            background: 'linear-gradient(to bottom, #F8E6BC 0%, #F8E6BC 100%)',
           }}
         >
           {/* Title */}
@@ -64,7 +67,7 @@ export default function Home() {
           </h1>
 
           {/* Typewriter Text */}
-          <div className="h-24 flex items-center justify-center mb-12">
+          <div className="h-24 flex items-center justify-center" style={{ background: '#F8E6BC' }}>
             <p 
               className="text-3xl md:text-4xl font-black text-foreground min-h-20 drop-shadow-md text-center"
               style={{ fontFamily: "'Raqaa', serif" }}
@@ -75,15 +78,34 @@ export default function Home() {
           </div>
 
           {/* Video Section - Autoplay Background */}
-          <div className="w-full flex-1">
+          <div className="w-full flex-1 relative">
             <video 
+              ref={videoRef}
               autoPlay
-              muted
+              muted={isMuted}
               loop
               className="w-full h-full object-cover"
             >
               <source src="/manus-storage/home-video_8c2f1ef2.mp4" type="video/mp4" />
             </video>
+            
+            {/* Sound Toggle Button */}
+            <button
+              onClick={() => {
+                setIsMuted(!isMuted);
+                if (videoRef.current) {
+                  videoRef.current.muted = !isMuted;
+                }
+              }}
+              className="absolute bottom-4 right-4 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all"
+              title={isMuted ? 'تشغيل الصوت' : 'إيقاف الصوت'}
+            >
+              {isMuted ? (
+                <VolumeX className="w-5 h-5 text-gray-800" />
+              ) : (
+                <Volume2 className="w-5 h-5 text-gray-800" />
+              )}
+            </button>
           </div>
         </section>
       </main>
