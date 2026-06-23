@@ -98,26 +98,23 @@ export default function Files() {
           {/* Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {cards.map((card) => {
-              // Determine border color based on card ID
-              let borderColor = 'bg-white';
-              if (card.id === 1) {
-                borderColor = 'bg-[#F8E6BC]';
-              } else if (card.id === 3 || card.id === 6) {
-                borderColor = 'bg-white';
-              }
+
               
+
+              
+              // Default: Show all content
               return (
                 <div
                   key={card.id}
-                  className={`group relative overflow-hidden rounded-xl ${borderColor} shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 p-4 sm:p-6`}
+                  className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
                   onMouseEnter={() => setHoveredCard(card.id)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
-                  <div className="relative h-48 sm:h-64 lg:h-96 overflow-hidden bg-white rounded-lg flex items-center justify-center">
+                  <div className="relative h-48 sm:h-64 lg:h-96 overflow-hidden bg-secondary flex items-center justify-center">
                     <img
                       src={card.image}
                       alt={card.title}
-                      className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-110"
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
