@@ -49,63 +49,70 @@ export default function Home() {
   }, [charIndex, phraseIndex, isDeleting]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen" style={{ background: '#F8E6BC' }}>
       {/* Main Content */}
       <main className="flex-1 pt-16">
-        {/* Hero Section with Title and Typewriter */}
-        <section className="relative w-full min-h-screen flex flex-col items-center justify-start pt-20"
-          style={{
-            background: 'linear-gradient(to bottom, #F8E6BC 0%, #F8E6BC 100%)',
-          }}
-        >
+        {/* Hero Section */}
+        <section className="w-full min-h-screen flex flex-col items-center justify-center px-4 md:px-8">
           {/* Title */}
           <h1 
-            className="text-5xl md:text-7xl font-black text-primary mb-8 text-center drop-shadow-lg"
+            className="text-4xl md:text-6xl font-black text-primary mb-16 text-center drop-shadow-lg"
             style={{ fontFamily: "'Raqaa', serif" }}
           >
             مجلسنا - مجلس التربية الممتد
           </h1>
 
-          {/* Typewriter Text */}
-          <div className="h-24 flex items-center justify-center" style={{ background: '#F8E6BC' }}>
-            <p 
-              className="text-3xl md:text-4xl font-black text-foreground min-h-20 drop-shadow-md text-center"
-              style={{ fontFamily: "'Raqaa', serif" }}
-            >
-              <span className="inline-block">{displayedText}</span>
-              <span className="inline-block ml-2 animate-pulse text-primary">|</span>
-            </p>
-          </div>
+          {/* Content Container - Text and Video Side by Side */}
+          <div className="w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+            {/* Left Side - Text Content */}
+            <div className="flex-1 flex flex-col items-center justify-center">
+              {/* Typewriter Text */}
+              <div className="min-h-32 flex items-center justify-center">
+                <p 
+                  className="text-2xl md:text-4xl font-black text-foreground drop-shadow-md text-center"
+                  style={{ fontFamily: "'Raqaa', serif" }}
+                >
+                  <span className="inline-block">{displayedText}</span>
+                  <span className="inline-block ml-2 animate-pulse text-primary">|</span>
+                </p>
+              </div>
+            </div>
 
-          {/* Video Section - Autoplay Background */}
-          <div className="w-full flex-1 relative">
-            <video 
-              ref={videoRef}
-              autoPlay
-              muted={isMuted}
-              loop
-              className="w-full h-full object-cover"
-            >
-              <source src="/manus-storage/home-video_8c2f1ef2.mp4" type="video/mp4" />
-            </video>
-            
-            {/* Sound Toggle Button */}
-            <button
-              onClick={() => {
-                setIsMuted(!isMuted);
-                if (videoRef.current) {
-                  videoRef.current.muted = !isMuted;
-                }
-              }}
-              className="absolute bottom-4 right-4 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all"
-              title={isMuted ? 'تشغيل الصوت' : 'إيقاف الصوت'}
-            >
-              {isMuted ? (
-                <VolumeX className="w-5 h-5 text-gray-800" />
-              ) : (
-                <Volume2 className="w-5 h-5 text-gray-800" />
-              )}
-            </button>
+            {/* Right Side - Circular Video */}
+            <div className="flex-1 flex items-center justify-center">
+              <div className="relative w-80 h-80 md:w-96 md:h-96">
+                {/* Circular Video Container */}
+                <div className="absolute inset-0 rounded-full overflow-hidden shadow-2xl">
+                  <video 
+                    ref={videoRef}
+                    autoPlay
+                    muted={isMuted}
+                    loop
+                    className="w-full h-full object-cover"
+                  >
+                    <source src="/manus-storage/home-video_8c2f1ef2.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                
+                {/* Sound Toggle Button */}
+                <button
+                  onClick={() => {
+                    setIsMuted(!isMuted);
+                    if (videoRef.current) {
+                      videoRef.current.muted = !isMuted;
+                    }
+                  }}
+                  className="absolute bottom-4 left-4 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all z-10"
+                  title={isMuted ? 'تشغيل الصوت' : 'إيقاف الصوت'}
+                >
+                  {isMuted ? (
+                    <VolumeX className="w-6 h-6 text-gray-800" />
+                  ) : (
+                    <Volume2 className="w-6 h-6 text-gray-800" />
+                  )}
+                </button>
+              </div>
+            </div>
           </div>
         </section>
       </main>
