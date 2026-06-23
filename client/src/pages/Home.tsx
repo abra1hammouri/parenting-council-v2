@@ -74,6 +74,18 @@ export default function Home() {
             </p>
           </div>
 
+          {/* Video Section */}
+          <div className="w-full max-w-4xl mx-auto px-4 md:px-8 mb-12">
+            <video 
+              controls
+              className="w-full rounded-lg shadow-lg"
+              style={{ aspectRatio: '16 / 9' }}
+            >
+              <source src="/manus-storage/home-video_8c2f1ef2.mp4" type="video/mp4" />
+              متصفحك لا يدعم تشغيل الفيديو
+            </video>
+          </div>
+
           {/* Full Height Image */}
           <div className="w-full flex-1">
             <img 
