@@ -62,6 +62,15 @@ const cards: Card[] = [
     links: [
       { label: 'اطلع على التلخيصات', url: 'https://drive.google.com/drive/folders/1tnq72eMY2bGU4BTo-oNcVRi5Gf5HjUfo', target: '_blank' }
     ]
+  },
+  {
+    id: 6,
+    title: 'ملفات أساسية وقصص',
+    description: 'مجموعة من الملفات الأساسية والقصص المهمة',
+    image: '/manus-storage/card-6-stories_default.png',
+    links: [
+      { label: 'اطلع على الملفات', url: 'https://drive.google.com/drive/folders/1-jxiAgL1w8XcBHDY8rO64JcAL4Nk41SN', target: '_blank' }
+    ]
   }
 ];
 
