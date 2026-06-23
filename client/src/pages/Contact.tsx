@@ -4,6 +4,7 @@ import { MessageCircle, Youtube, Facebook } from 'lucide-react';
  * Design Philosophy: Warm Educational Minimalism
  * - Contact page with boat background image
  * - Small transparent icon cards on the right
+ * - Icon names below each icon
  * - Image extends across the full page
  * - Minimal, clean design
  */
@@ -27,19 +28,20 @@ export default function Contact() {
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex items-center justify-end px-4 sm:px-6 lg:px-12">
-        <div className="space-y-4 max-w-xs">
+        <div className="space-y-6 max-w-xs">
           {/* WhatsApp Card */}
           <a
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white/20 backdrop-blur-md rounded-full p-4 hover:bg-white/30 transition-all duration-200 flex items-center justify-center group cursor-pointer"
+            className="flex flex-col items-center group cursor-pointer"
             title="WhatsApp"
           >
-            <div className="flex flex-col items-center">
+            <div className="bg-white/20 backdrop-blur-md rounded-full p-4 hover:bg-white/30 transition-all duration-200 flex items-center justify-center">
               <MessageCircle className="w-6 h-6 text-green-600 group-hover:scale-110 transition-transform" />
-              <p className="text-xs text-gray-700 mt-1 font-semibold">+201063070272</p>
             </div>
+            <p className="text-sm text-gray-700 mt-2 font-semibold">WhatsApp</p>
+            <p className="text-xs text-gray-600">+201063070272</p>
           </a>
 
           {/* YouTube Card */}
@@ -47,13 +49,14 @@ export default function Contact() {
             href={youtubeLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white/20 backdrop-blur-md rounded-full p-4 hover:bg-white/30 transition-all duration-200 flex items-center justify-center group cursor-pointer"
+            className="flex flex-col items-center group cursor-pointer"
             title="YouTube"
           >
-            <div className="flex flex-col items-center">
+            <div className="bg-white/20 backdrop-blur-md rounded-full p-4 hover:bg-white/30 transition-all duration-200 flex items-center justify-center">
               <Youtube className="w-6 h-6 text-red-600 group-hover:scale-110 transition-transform" />
-              <p className="text-xs text-gray-700 mt-1 font-semibold">Ahmed Yaser Roza</p>
             </div>
+            <p className="text-sm text-gray-700 mt-2 font-semibold">YouTube</p>
+            <p className="text-xs text-gray-600">Ahmed Yaser Roza</p>
           </a>
 
           {/* Facebook Card */}
@@ -61,13 +64,14 @@ export default function Contact() {
             href={facebookLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white/20 backdrop-blur-md rounded-full p-4 hover:bg-white/30 transition-all duration-200 flex items-center justify-center group cursor-pointer"
+            className="flex flex-col items-center group cursor-pointer"
             title="Facebook"
           >
-            <div className="flex flex-col items-center">
+            <div className="bg-white/20 backdrop-blur-md rounded-full p-4 hover:bg-white/30 transition-all duration-200 flex items-center justify-center">
               <Facebook className="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform" />
-              <p className="text-xs text-gray-700 mt-1 font-semibold">Ahmed Yaser Roza</p>
             </div>
+            <p className="text-sm text-gray-700 mt-2 font-semibold">Facebook</p>
+            <p className="text-xs text-gray-600">Ahmed Yaser Roza</p>
           </a>
         </div>
       </div>
