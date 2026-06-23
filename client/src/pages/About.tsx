@@ -1,130 +1,72 @@
 import React from 'react';
-import { Link } from 'wouter';
 
 export default function About() {
+  const textSections = [
+    {
+      title: "المجلس (ممتد)، وياخد فترة طويلة، ونشرح فيه كتاب واحد فقط! أو كتابين بحد أقصى",
+      content: `آه، وده شيء ربما يكون مثير للاستغراب لبعض الناس، وأنا مقدر ده جدًا، وهنا بعض الناس بتسأل: طب ليه أعمل في نفسي كده؟ مادمت أقدر أحصل على كتب أكثر في وقت أقل؟
+
+الحقيقة إنه التصور ده خارج من مساحة، فيها عدم تدقيق في ماهية التربية بالأساس، الكتب اللي إحنا بنشرحها، كتب موجودة ومتوفرة، وسهل الوصول ليها في نهاية المطاف، والاستمتاع بأفكارها، ولن تعدم خيرًا أبدًا من الوصول للكتب والقراءة فيها، وأنا لا أرى إن الكتب دي (كتب التربية الإيجابية) تحتاج معلم يفك ألفاظها، بل حتى لا أرى الترجمات سيئة لدرجة إنك عايز حد يفك أفكارها، بالعكس، الكلام سلس وجميل، على الأقل في الكتابين اللي إحنا بنشرحهم، أو مهتمين بشرحهم، ولو أنا، إضافتي على الكتاب هتكون لا شيء، يبقى أنا مش هشرح الكتاب أصلًا! إنما أنا بشرح الكتب دي لإني عندي أشياء، ثرية جدًا، نافعة جدًا، ومفيدة جدًا على المستوى الشخصي وعلى المستوى التربوي، أشياء أزعم إنها راجعة لرحلتي أنا، وبالتالي مش العادي إنها تكون متوفرة بالشكل ده بسهولة.
+
+يبقى رقم (1): الكتب أصلًا متوفرة، لكن أنا عندي (ملكة) وطريق واسع، لإنك تشوف أبعد بكتير جدًا من الكتاب، وزي كل كتاب بنشرحه، الكتاب (مطية) لمجموعة أفكار أوسع عايز أبرزها.
+
+كمان، التصور الغير دقيق ده مبني على إن التربية هي مجموعة الأدوات اللي أنت هتعرفها، فهتلاقي نفسك بتطبقها، والدنيا تبقى فل! وأبسط الأشياء إن ده تصور مش حقيقي أبدًا.`
+    },
+    {
+      title: "اول جزء من النص",
+      content: `المجلس هدفه إقحامك في التربية، مش بمعرفة الأدوات اللي تقدر تستخدمها وبس، إنما بإنك تشوف الأدوات دي ممثلة قدامك على الحقيقة مرة وإتنين وتلاتة، المجلس هدفه إن الأفكار اللي بنتكلم عنها تكون حتة منك، وأظن ده أثره واضح مع الأصدقاء في المجلس، مثال: إحنا مش بنتكلم عن الـ validation أو إقرار المشاعر، الناس بتشرب إقرار المشاعر وهي ماشية،
+إحنا مش بنتكلم عن قبول المشاعر، إحنا تسمية المشاعر، والإقرار بيها، واحترامها أيًا ما كان اللي بتقوله، بنمارسه طول ما إحنا ماشيين، أنت بتشرب تربية .
+
+يبقى (2) أنت جوا التربية! مش بتقرأ عنها.
+
+كمان
+المجلس واحد من أهدافه، إنه يكون عند المتعلم، حس تربوي! ميبقاش ناقل، ولا سميع! إنما أنت عندك حِس! عندك ملكة! بعد شوية وقت هتلاقي نفسك شايف إنه اللي بيتقال، أو اللي بيتعمل، أو اللي بيتمارس فيه حاجة غلط! حتى لو أنت مش مدرك الغلط فين! لكـن (الوحش الداخلي - your own monster) مدرك! إنه هنا في ريحة مش تمام، هيلقطها ويتعلمها!
+
+المجلس كمان، هدفه، يشاركك الرحلة!
+يعني أنا لما أعرف سمات المرحلة، هتتوقف المرحلة عن كونها صعبة؟
+طيب لما أتعلم تربية، وأعرف السلوك الواجب فعله! التربية بتبقى عملية سهلة وسلسلة! لأ، وعلشان كده الجروب موجود، يحتوي (المفكات) اللي الطفل بيضربها فيك! (؛علشان يعالجك!) (اللي هيعالجك الطفل مش المجلس= نص اقتباس من كلام أستاذة في التربية موجودة في الجروب).
+
+يبقى (3) و (4) إحنا بنكون (حِس) و(بنشاركك) الرحلة.
+
+كمان، المجلس مهتم بيك أنت! يعني مش هقولك مارس إقرار المشاعر وأنت متعرفش يعني إيه مشاعر، مش هقولك خليك يقظ! وأنت مش قادر تكون يقظ! مش هقولك شيء، وأسيبك علشان تمارسه مع الطفل، وأنت أصلًا مش عارف تمارسه مع نفسك! المجلس مهتم بيك زي ما مهتم بالطفل! أنت التربية اللي بينزرع فيها الطفل، وأنت اللي محتاج تخلي بالك من نفسك!
+
+أخيرًا، ودي يمكن تكون المعلومة المهمة، ولكنها بالنسبالي أقل معلومة أهمية، وهي مدركة لكل من في المجلس، المجلس مبني على عدد كبير جدًا جدًا جدًا من الكتب! إحنا بنقرأ كتاب آه، لكن تحضير كل مجلس لامم مجموعة كتب تصدع أي حد، وبتصدعني أنا شخصيًا من كترها. .
+والمجلس لوحده، كافي يخليك تشوف كل الكتب التربوية بعين مختلفة!
+
+المجلس كائن حي! أهله أهم شيء فيه، ثم كل الأشياء اللي بتحصل حواليه، واللي من ضمنها قراءة المنهج. .
+
+طيب أعمل إيه لو أنا محتاج أمد إيدي في المنهج كله، جمب مجلس التربية، أو لوحده من غير المجلس؟ احضر الكورس المتعلق ب"كيف تكون فني (صنايعي) تربية إيجابية".`
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-amber-50">
-      {/* Hero Section */}
-      <div className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center mb-20">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-6" style={{ fontFamily: "'Raqaa', serif" }}>
+      {/* Header */}
+      <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary" style={{ fontFamily: "'Raqaa', serif" }}>
             عن مجلس التربية الممتد
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary via-orange-400 to-primary mx-auto mb-8"></div>
-          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-            رحلة تربوية عميقة تتجاوز المعرفة إلى الممارسة والتحول الشخصي
-          </p>
         </div>
 
-        {/* Main Content */}
+        {/* Content Sections */}
         <div className="max-w-4xl mx-auto space-y-12">
-          {/* Section 1 */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 sm:p-12 border-r-4 border-primary">
-            <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-6" style={{ fontFamily: "'Raqaa', serif" }}>
-              لماذا المجلس يستغرق وقتاً طويلاً؟
-            </h2>
-            <div className="space-y-6 text-right text-gray-700 leading-relaxed">
-              <p>
-                المجلس <span className="font-semibold text-primary">(ممتد)</span> يأخذ فترة طويلة، ونشرح فيه كتاب واحد فقط! أو كتابين بحد أقصى. قد يبدو هذا مثيراً للاستغراب لبعض الناس، وأنا أقدّر ذلك جداً.
-              </p>
-              
-              <p>
-                البعض يسأل: <span className="italic">"لماذا أعمل في نفسي هكذا؟ مادمت أستطيع الحصول على كتب أكثر في وقت أقل؟"</span>
-              </p>
-
-              <div className="bg-amber-50 border-r-4 border-orange-400 p-6 rounded-lg">
-                <p className="font-semibold text-primary mb-3">الحقيقة:</p>
-                <p>
-                  هذا التصور ينبع من عدم تدقيق في ماهية التربية بالأساس. الكتب التي نشرحها متوفرة وسهل الوصول إليها، والاستمتاع بأفكارها لن يعدمك خيراً أبداً. لكن إضافتي على الكتاب ليست في فك الألفاظ أو ترجمة الأفكار، بل في الأشياء الثرية والنافعة جداً على المستوى الشخصي والتربوي، أشياء راجعة لرحلتي الخاصة، وليست متوفرة بهذا الشكل بسهولة.
-                </p>
-              </div>
-
-              <p>
-                <span className="font-semibold text-primary">الكتاب مطية</span> لمجموعة أفكار أوسع عايز أبرزها. أنت ستشوف أبعد بكتير جداً من الكتاب.
-              </p>
-            </div>
-          </div>
-
-          {/* Section 2 - The Core Goals */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Goal 1 */}
-            <div className="bg-gradient-to-br from-primary/10 to-orange-100 rounded-2xl shadow-lg p-8 border-t-4 border-primary">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold">1</div>
-                <h3 className="text-2xl font-bold text-primary mr-4" style={{ fontFamily: "'Raqaa', serif" }}>أنت داخل التربية</h3>
-              </div>
-              <p className="text-gray-700 leading-relaxed text-right">
-                أنت لا تقرأ عن التربية، بل أنت داخلها! الأفكار التي نتكلم عنها تصبح جزءاً منك. مثلاً: نحن لا نتكلم عن "إقرار المشاعر" فقط، بل نمارسها طول الطريق. أنت تشرب التربية وأنت ماشٍ.
-              </p>
-            </div>
-
-            {/* Goal 2 */}
-            <div className="bg-gradient-to-br from-primary/10 to-orange-100 rounded-2xl shadow-lg p-8 border-t-4 border-primary">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold">2</div>
-                <h3 className="text-2xl font-bold text-primary mr-4" style={{ fontFamily: "'Raqaa', serif" }}>تطوير الحس التربوي</h3>
-              </div>
-              <p className="text-gray-700 leading-relaxed text-right">
-                المجلس يهدف إلى أن تملك <span className="font-semibold">حساً تربوياً</span>، لا أن تكون ناقلاً أو سامعاً فقط. بعد وقت ستجد نفسك تشعر بما هو خاطئ، حتى لو لم تدرك الخطأ بالضبط. هذا الحس الداخلي سيتعلمه الطفل منك.
-              </p>
-            </div>
-
-            {/* Goal 3 */}
-            <div className="bg-gradient-to-br from-primary/10 to-orange-100 rounded-2xl shadow-lg p-8 border-t-4 border-primary">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold">3</div>
-                <h3 className="text-2xl font-bold text-primary mr-4" style={{ fontFamily: "'Raqaa', serif" }}>مشاركة الرحلة</h3>
-              </div>
-              <p className="text-gray-700 leading-relaxed text-right">
-                معرفة سمات المرحلة لا تجعلها سهلة تلقائياً. التربية عملية معقدة، والطفل سيعلمك من خلال تحدياته. المجلس موجود ليحتويك ويشاركك هذه الرحلة الصعبة.
-              </p>
-            </div>
-
-            {/* Goal 4 */}
-            <div className="bg-gradient-to-br from-primary/10 to-orange-100 rounded-2xl shadow-lg p-8 border-t-4 border-primary">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold">4</div>
-                <h3 className="text-2xl font-bold text-primary mr-4" style={{ fontFamily: "'Raqaa', serif" }}>الاهتمام بك أولاً</h3>
-              </div>
-              <p className="text-gray-700 leading-relaxed text-right">
-                المجلس مهتم بك أنت! لن نطلب منك ممارسة شيء لا تفهمه أو لا تستطيع تطبيقه على نفسك أولاً. <span className="font-semibold">أنت التربية</span> التي سينزرع فيها الطفل، وأنت من يحتاج أن تعتني بنفسك.
-              </p>
-            </div>
-          </div>
-
-          {/* Section 3 */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 sm:p-12 border-l-4 border-primary">
-            <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-6" style={{ fontFamily: "'Raqaa', serif" }}>
-              الأساس الحقيقي للمجلس
-            </h2>
-            <div className="space-y-6 text-right text-gray-700 leading-relaxed">
-              <p>
-                المجلس مبني على عدد كبير جداً من الكتب! نحن نقرأ كتاباً واحداً، لكن تحضير كل مجلس يتطلب مراجعة مجموعة كتب ضخمة. هذا البحث العميق يخليك ترى كل الكتب التربوية بعين مختلفة تماماً.
-              </p>
-
-              <div className="bg-gradient-to-r from-primary/5 to-orange-100/50 p-6 rounded-lg border-r-4 border-primary">
-                <p className="font-semibold text-primary mb-3">المجلس كائن حي:</p>
-                <p>
-                  أهله أهم شيء فيه. ثم كل الأشياء التي تحصل حوله، بما فيها قراءة المنهج. المجلس ليس مجرد معلومات، بل هو مجتمع يتعلم ويتطور معاً.
-                </p>
+          {textSections.map((section, idx) => (
+            <div key={idx} className="bg-white rounded-2xl shadow-lg p-8 sm:p-12">
+              {section.title && (
+                <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-8" style={{ fontFamily: "'Raqaa', serif" }}>
+                  {section.title}
+                </h2>
+              )}
+              <div className="space-y-6 text-right text-gray-700 leading-relaxed text-lg">
+                {section.content.split('\n\n').map((paragraph, pIdx) => (
+                  <p key={pIdx} className="whitespace-pre-wrap">
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="bg-gradient-to-r from-primary to-orange-500 rounded-2xl shadow-xl p-8 sm:p-12 text-center text-white">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4" style={{ fontFamily: "'Raqaa', serif" }}>
-              هل تريد المزيد؟
-            </h2>
-            <p className="text-lg mb-8 opacity-90">
-              إذا كنت تريد الغوص أعمق في المنهج الكامل، انضم إلى كورس "كيف تكون فني (صنايعي) تربية إيجابية"
-            </p>
-            <Link href="/contact">
-              <a className="inline-block px-8 py-3 bg-white text-primary font-bold rounded-lg hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105">
-                تواصل معنا
-              </a>
-            </Link>
-          </div>
+          ))}
         </div>
       </div>
     </div>
