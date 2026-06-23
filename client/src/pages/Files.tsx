@@ -70,21 +70,6 @@ export default function Files() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      {/* Header Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <nav className="container h-16 flex items-center justify-between">
-          <a href="/" className="text-2xl font-bold text-primary" style={{ fontFamily: "'Raqaa', serif" }}>
-            مجلس التربية الممتد
-          </a>
-          <div className="flex gap-8">
-            <a href="/" className="text-foreground hover:text-primary transition-colors duration-200">الرئيسية</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors duration-200">عن المجلس</a>
-            <a href="/files" className="text-primary font-semibold transition-colors duration-200">الملفات</a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors duration-200">اتصل بنا</a>
-          </div>
-        </nav>
-      </header>
-
       {/* Main Content */}
       <main className="flex-1 pt-32 pb-20 bg-secondary/30">
         <div className="container">
