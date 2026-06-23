@@ -16,35 +16,45 @@ const phrases = [
 ];
 
 export default function Home() {
+  const [displayedText, setDisplayedText] = useState('');
   const [phraseIndex, setPhraseIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Fade out after 4 seconds
-    const fadeOutTimer = setTimeout(() => {
-      setIsVisible(false);
-    }, 4000);
+    const currentPhrase = phrases[phraseIndex];
+    // Very slow speeds: typing 200ms, deleting 100ms
+    const speed = isDeleting ? 100 : 200;
+    const delay = setTimeout(() => {
+      if (!isDeleting) {
+        if (charIndex < currentPhrase.length) {
+          setDisplayedText(currentPhrase.slice(0, charIndex + 1));
+          setCharIndex(charIndex + 1);
+        } else {
+          setTimeout(() => setIsDeleting(true), 3000);
+        }
+      } else {
+        if (charIndex > 0) {
+          setDisplayedText(currentPhrase.slice(0, charIndex - 1));
+          setCharIndex(charIndex - 1);
+        } else {
+          setIsDeleting(false);
+          setPhraseIndex((phraseIndex + 1) % phrases.length);
+        }
+      }
+    }, speed);
 
-    // Switch phrase and fade in after 1 second of being invisible
-    const switchTimer = setTimeout(() => {
-      setPhraseIndex((prev) => (prev + 1) % phrases.length);
-      setIsVisible(true);
-    }, 5000);
-
-    return () => {
-      clearTimeout(fadeOutTimer);
-      clearTimeout(switchTimer);
-    };
-  }, [phraseIndex]);
+    return () => clearTimeout(delay);
+  }, [charIndex, phraseIndex, isDeleting]);
 
   return (
     <div className="flex flex-col min-h-screen" style={{ background: '#F8E6BC' }}>
       {/* Main Content */}
-      <main className="flex-1 pt-16">
+      <main className="flex-1 pt-32">
         {/* Title */}
-        <div className="text-center px-4 md:px-8 mb-12">
+        <div className="text-center px-4 md:px-8 mb-20">
           <h1 
             className="text-4xl md:text-6xl font-black text-primary drop-shadow-lg"
             style={{ fontFamily: "'Raqaa', serif" }}
@@ -53,33 +63,43 @@ export default function Home() {
           </h1>
         </div>
 
-        {/* Fade-In Text Section */}
-        <section className="w-full flex items-center justify-center px-4 md:px-8 mb-16">
+        {/* Typewriter Text Section */}
+        <section className="w-full flex items-center justify-center px-4 md:px-8 mb-24">
           <div className="min-h-40 flex items-center justify-center">
             <div className="relative inline-block">
               {/* Glowing background effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-transparent rounded-lg blur-xl -z-10"></div>
               
-              {/* Text with fade-in/fade-out effect */}
+              {/* Text with smooth fade-in effect */}
               <p 
-                className="text-2xl md:text-4xl font-black text-foreground drop-shadow-md text-center px-8 py-6 transition-opacity duration-1000"
+                className="text-2xl md:text-4xl font-black text-foreground drop-shadow-md text-center px-8 py-6 transition-all duration-300"
                 style={{ 
                   fontFamily: "'Raqaa', serif",
                   minHeight: '120px',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  opacity: isVisible ? 1 : 0
+                  justifyContent: 'center'
                 }}
               >
-                {phrases[phraseIndex]}
+                <span className="inline-block">{displayedText}</span>
+                {/* Blinking cursor with smooth animation */}
+                <span 
+                  className="inline-block ml-2 text-primary"
+                  style={{
+                    animation: 'blink 1s infinite',
+                    fontSize: '1.2em',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  |
+                </span>
               </p>
             </div>
           </div>
         </section>
 
         {/* Video Section - Below Text with Professional Edges */}
-        <section className="w-full flex items-center justify-center px-4 md:px-8 pb-16">
+        <section className="w-full flex items-center justify-center px-4 md:px-8 pb-24">
           <div className="relative w-full max-w-4xl">
             {/* Video Container with Professional Styling */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/40">
@@ -122,6 +142,18 @@ export default function Home() {
           <p>&copy; 2026 مجلس التربية الممتد. جميع الحقوق محفوظة.</p>
         </div>
       </footer>
+
+      {/* Blinking cursor animation */}
+      <style>{`
+        @keyframes blink {
+          0%, 49% {
+            opacity: 1;
+          }
+          50%, 100% {
+            opacity: 0;
+          }
+        }
+      `}</style>
     </div>
   );
 }
