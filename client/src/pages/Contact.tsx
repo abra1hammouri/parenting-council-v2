@@ -27,7 +27,7 @@ export default function Contact() {
 
       {/* Main Content Container */}
       <div className="container px-4">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-1">
           
           {/* Left Side - Contact Icons */}
           <div className="w-full lg:w-1/3 flex flex-col justify-start space-y-6">
