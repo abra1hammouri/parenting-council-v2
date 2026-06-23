@@ -96,6 +96,13 @@ export default function Contact() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-foreground/20 text-foreground py-3 mt-16">
+        <div className="container text-center">
+          <p className="text-xs md:text-sm">&copy; 2026 مجلس التربية الممتد. جميع الحقوق محفوظة.</p>
+        </div>
+      </footer>
     </div>
   );
 }
