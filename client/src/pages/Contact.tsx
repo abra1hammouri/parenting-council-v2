@@ -27,7 +27,7 @@ export default function Contact() {
       <div className="absolute inset-0 bg-black/10"></div>
 
       {/* Content - Icons on the right side */}
-      <div className="relative z-10 min-h-screen flex items-center justify-end pr-4 sm:pr-6 lg:pr-12">
+      <div className="relative z-10 min-h-screen flex items-center justify-end pr-4 sm:pr-6 lg:pr-12 pt-20">
         <div className="space-y-6 max-w-xs">
           {/* WhatsApp Card */}
           <a
