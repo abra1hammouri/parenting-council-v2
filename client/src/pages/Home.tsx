@@ -135,14 +135,14 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Tribute Section - Fading Card */}
-        <section className="w-full flex items-center justify-center px-4 md:px-8 pb-24">
-          <div className="w-full max-w-4xl">
+        {/* Tribute Section - Elegant Fading Card */}
+        <section className="w-full flex items-center justify-center px-4 md:px-8 pb-16">
+          <div className="w-full max-w-2xl">
             <div 
-              className="bg-white/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/40 shadow-lg tribute-fade"
+              className="bg-white/20 backdrop-blur-md rounded-xl p-4 md:p-5 border border-white/30 shadow-sm tribute-fade-elegant"
             >
               <p 
-                className="text-base md:text-lg font-bold text-foreground text-center"
+                className="text-sm md:text-base font-semibold text-foreground text-center leading-relaxed"
                 style={{ fontFamily: "'Raqaa', serif" }}
               >
                 لا تنسوا زميلتنا أسماء خالد، ربنا يرحمها ويغفرلها ويسكنها فسيح جناته
@@ -170,23 +170,27 @@ export default function Home() {
           }
         }
         
-        @keyframes tributeFade {
+        @keyframes tributeFadeElegant {
           0% {
             opacity: 0;
+            transform: translateY(8px);
           }
-          10% {
+          8% {
             opacity: 1;
+            transform: translateY(0);
           }
-          90% {
+          92% {
             opacity: 1;
+            transform: translateY(0);
           }
           100% {
             opacity: 0;
+            transform: translateY(-8px);
           }
         }
         
-        .tribute-fade {
-          animation: tributeFade 8s ease-in-out 1;
+        .tribute-fade-elegant {
+          animation: tributeFadeElegant 6s cubic-bezier(0.4, 0, 0.2, 1) 1;
         }
       `}</style>
     </div>
