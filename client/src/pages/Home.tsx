@@ -16,41 +16,28 @@ const phrases = [
 ];
 
 export default function Home() {
-  const [displayedText, setDisplayedText] = useState('');
   const [phraseIndex, setPhraseIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const currentPhrase = phrases[phraseIndex];
-    // Slower speeds: typing 150ms, deleting 80ms
-    const speed = isDeleting ? 80 : 150;
-    const delay = setTimeout(() => {
-      if (!isDeleting) {
-        if (charIndex < currentPhrase.length) {
-          setDisplayedText(currentPhrase.slice(0, charIndex + 1));
-          setCharIndex(charIndex + 1);
-        } else {
-          // Longer pause before deleting (3 seconds)
-          setTimeout(() => setIsDeleting(true), 3000);
-        }
-      } else {
-        if (charIndex > 0) {
-          setDisplayedText(currentPhrase.slice(0, charIndex - 1));
-          setCharIndex(charIndex - 1);
-        } else {
-          setIsDeleting(false);
-          setPhraseIndex((phraseIndex + 1) % phrases.length);
-          // Pause before next phrase (1 second)
-          setTimeout(() => {}, 1000);
-        }
-      }
-    }, speed);
+    // Fade out after 4 seconds
+    const fadeOutTimer = setTimeout(() => {
+      setIsVisible(false);
+    }, 4000);
 
-    return () => clearTimeout(delay);
-  }, [charIndex, phraseIndex, isDeleting]);
+    // Switch phrase and fade in after 1 second of being invisible
+    const switchTimer = setTimeout(() => {
+      setPhraseIndex((prev) => (prev + 1) % phrases.length);
+      setIsVisible(true);
+    }, 5000);
+
+    return () => {
+      clearTimeout(fadeOutTimer);
+      clearTimeout(switchTimer);
+    };
+  }, [phraseIndex]);
 
   return (
     <div className="flex flex-col min-h-screen" style={{ background: '#F8E6BC' }}>
@@ -66,36 +53,26 @@ export default function Home() {
           </h1>
         </div>
 
-        {/* Typewriter Text Section - Alternative Style */}
+        {/* Fade-In Text Section */}
         <section className="w-full flex items-center justify-center px-4 md:px-8 mb-16">
           <div className="min-h-40 flex items-center justify-center">
             <div className="relative inline-block">
               {/* Glowing background effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-transparent rounded-lg blur-xl -z-10"></div>
               
-              {/* Text with smooth fade-in effect */}
+              {/* Text with fade-in/fade-out effect */}
               <p 
-                className="text-2xl md:text-4xl font-black text-foreground drop-shadow-md text-center px-8 py-6 transition-all duration-300"
+                className="text-2xl md:text-4xl font-black text-foreground drop-shadow-md text-center px-8 py-6 transition-opacity duration-1000"
                 style={{ 
                   fontFamily: "'Raqaa', serif",
                   minHeight: '120px',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
+                  opacity: isVisible ? 1 : 0
                 }}
               >
-                <span className="inline-block">{displayedText}</span>
-                {/* Blinking cursor with smooth animation */}
-                <span 
-                  className="inline-block ml-2 text-primary"
-                  style={{
-                    animation: 'blink 1s infinite',
-                    fontSize: '1.2em',
-                    fontWeight: 'bold'
-                  }}
-                >
-                  |
-                </span>
+                {phrases[phraseIndex]}
               </p>
             </div>
           </div>
@@ -145,18 +122,6 @@ export default function Home() {
           <p>&copy; 2026 مجلس التربية الممتد. جميع الحقوق محفوظة.</p>
         </div>
       </footer>
-
-      {/* Blinking cursor animation */}
-      <style>{`
-        @keyframes blink {
-          0%, 49% {
-            opacity: 1;
-          }
-          50%, 100% {
-            opacity: 0;
-          }
-        }
-      `}</style>
     </div>
   );
 }
