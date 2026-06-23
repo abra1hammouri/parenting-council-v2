@@ -96,7 +96,7 @@ export default function Files() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {cards.map((card) => (
               <div
                 key={card.id}
@@ -105,7 +105,7 @@ export default function Files() {
                 onMouseLeave={() => setHoveredCard(null)}
               >
                 {/* Card Image */}
-                <div className="relative h-96 overflow-hidden bg-secondary flex items-center justify-center">
+                <div className="relative h-48 sm:h-64 lg:h-96 overflow-hidden bg-secondary flex items-center justify-center">
                   <img
                     src={card.image}
                     alt={card.title}
@@ -116,26 +116,26 @@ export default function Files() {
                 </div>
 
                 {/* Card Content */}
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   <h3 
-                    className="text-xl font-bold text-primary mb-3"
+                    className="text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-3"
                     style={{ fontFamily: "'Raqaa', serif" }}
                   >
                     {card.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-6 line-clamp-3">
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6 line-clamp-3">
                     {card.description}
                   </p>
 
                   {/* Links */}
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
                     {card.links.map((link, idx) => (
                       <a
                         key={idx}
                         href={link.url}
                         target={link.target || '_self'}
                         rel="noopener noreferrer"
-                        className="inline-block px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105"
+                        className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary text-white rounded-lg text-xs sm:text-sm font-semibold hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105"
                       >
                         {link.label}
                       </a>
