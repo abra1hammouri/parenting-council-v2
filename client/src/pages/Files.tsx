@@ -97,58 +97,102 @@ export default function Files() {
 
           {/* Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-            {cards.map((card) => (
-              <div
-                key={card.id}
-                className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
-                onMouseEnter={() => setHoveredCard(card.id)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                {/* Card Image */}
-                <div className="relative h-48 sm:h-64 lg:h-96 overflow-hidden bg-secondary flex items-center justify-center">
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-
-                {/* Card Content */}
-                <div className="p-4 sm:p-6 text-center">
-                  <h3 
-                    className="text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-3"
-                    style={{ fontFamily: "'Raqaa', serif" }}
+            {cards.map((card) => {
+              // Card 1: Show only image
+              if (card.id === 1) {
+                return (
+                  <div
+                    key={card.id}
+                    className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                    onMouseEnter={() => setHoveredCard(card.id)}
+                    onMouseLeave={() => setHoveredCard(null)}
                   >
-                    {card.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">
-                    {card.description}
-                  </p>
-
-                  {/* Links */}
-                  <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
-                    {card.links.map((link, idx) => (
-                      <a
-                        key={idx}
-                        href={link.url}
-                        target={link.target || '_self'}
-                        rel="noopener noreferrer"
-                        className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary text-white rounded-lg text-xs sm:text-sm font-semibold hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105"
+                    <div className="relative h-64 sm:h-80 lg:h-96 overflow-hidden bg-secondary flex items-center justify-center">
+                      <img
+                        src={card.image}
+                        alt={card.title}
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  </div>
+                );
+              }
+              
+              // Card 3: Show only title
+              if (card.id === 3) {
+                return (
+                  <div
+                    key={card.id}
+                    className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                    onMouseEnter={() => setHoveredCard(card.id)}
+                    onMouseLeave={() => setHoveredCard(null)}
+                  >
+                    <div className="relative h-48 sm:h-64 lg:h-96 overflow-hidden bg-secondary flex items-center justify-center">
+                      <img
+                        src={card.image}
+                        alt={card.title}
+                        className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div className="p-4 sm:p-6 text-center">
+                      <h3 
+                        className="text-lg sm:text-xl font-bold text-primary"
+                        style={{ fontFamily: "'Raqaa', serif" }}
                       >
-                        {link.label}
-                      </a>
-                    ))}
+                        {card.title}
+                      </h3>
+                    </div>
+                  </div>
+                );
+              }
+              
+              // Default: Show all content
+              return (
+                <div
+                  key={card.id}
+                  className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                  onMouseEnter={() => setHoveredCard(card.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <div className="relative h-48 sm:h-64 lg:h-96 overflow-hidden bg-secondary flex items-center justify-center">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+
+                  <div className="p-4 sm:p-6 text-center">
+                    <h3 
+                      className="text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-3"
+                      style={{ fontFamily: "'Raqaa', serif" }}
+                    >
+                      {card.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">
+                      {card.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
+                      {card.links.map((link, idx) => (
+                        <a
+                          key={idx}
+                          href={link.url}
+                          target={link.target || '_self'}
+                          rel="noopener noreferrer"
+                          className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary text-white rounded-lg text-xs sm:text-sm font-semibold hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
-
-                {/* Hover Box Effect */}
-                {hoveredCard === card.id && (
-                  <div className="absolute top-0 left-0 right-0 bottom-0 border-2 border-primary rounded-xl pointer-events-none animate-pulse"></div>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </main>
