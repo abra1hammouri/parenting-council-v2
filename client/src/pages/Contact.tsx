@@ -30,51 +30,57 @@ export default function Contact() {
         <div className="flex flex-row items-center justify-center gap-1">
           
           {/* Left Side - Contact Icons */}
-          <div className="w-full lg:w-1/3 flex flex-col justify-start space-y-6">
+          <div className="w-full lg:w-1/3 flex flex-col justify-start space-y-8">
             {/* WhatsApp Card */}
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-start group cursor-pointer"
-              title="WhatsApp"
-            >
-              <div className="bg-green-600 rounded-full p-3 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-200 shadow-lg">
-                <MessageCircle className="w-5 h-5 text-white" />
-              </div>
-              <p className="text-lg font-bold text-gray-800">WhatsApp</p>
-              <p className="text-gray-600 mt-1 text-sm">+201063070272</p>
-            </a>
+            <div className="flex flex-col items-center">
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group cursor-pointer mb-4"
+                title="WhatsApp"
+              >
+                <div className="bg-green-600 rounded-full p-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                  <MessageCircle className="w-5 h-5 text-white" />
+                </div>
+              </a>
+              <p className="text-lg font-bold text-gray-800 text-center">WhatsApp</p>
+              <p className="text-gray-600 mt-1 text-sm text-center">+201063070272</p>
+            </div>
 
             {/* YouTube Card */}
-            <a
-              href={youtubeLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-start group cursor-pointer"
-              title="YouTube"
-            >
-              <div className="bg-red-600 rounded-full p-3 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-200 shadow-lg">
-                <Youtube className="w-5 h-5 text-white" />
-              </div>
-              <p className="text-lg font-bold text-gray-800">YouTube</p>
-              <p className="text-gray-600 mt-1 text-sm">Ahmed Yaser Roza</p>
-            </a>
+            <div className="flex flex-col items-center">
+              <a
+                href={youtubeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group cursor-pointer mb-4"
+                title="YouTube"
+              >
+                <div className="bg-red-600 rounded-full p-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                  <Youtube className="w-5 h-5 text-white" />
+                </div>
+              </a>
+              <p className="text-lg font-bold text-gray-800 text-center">YouTube</p>
+              <p className="text-gray-600 mt-1 text-sm text-center">Ahmed Yaser Roza</p>
+            </div>
 
             {/* Facebook Card */}
-            <a
-              href={facebookLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col items-start group cursor-pointer"
-              title="Facebook"
-            >
-              <div className="bg-blue-600 rounded-full p-3 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-200 shadow-lg">
-                <Facebook className="w-5 h-5 text-white" />
-              </div>
-              <p className="text-lg font-bold text-gray-800">Facebook</p>
-              <p className="text-gray-600 mt-1 text-sm">Ahmed Yaser Roza</p>
-            </a>
+            <div className="flex flex-col items-center">
+              <a
+                href={facebookLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group cursor-pointer mb-4"
+                title="Facebook"
+              >
+                <div className="bg-blue-600 rounded-full p-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-200 shadow-lg">
+                  <Facebook className="w-5 h-5 text-white" />
+                </div>
+              </a>
+              <p className="text-lg font-bold text-gray-800 text-center">Facebook</p>
+              <p className="text-gray-600 mt-1 text-sm text-center">Ahmed Yaser Roza</p>
+            </div>
           </div>
 
           {/* Right Side - Boat Image */}
