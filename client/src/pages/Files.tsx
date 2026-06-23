@@ -67,7 +67,7 @@ const cards: Card[] = [
     id: 6,
     title: 'ملفات أساسية وقصص',
     description: 'ملفات من صنع الدكتور أحمد وقصتين مستحبات',
-    image: '/manus-storage/card-6-stories_0aff603a.png',
+    image: '/manus-storage/card-6-stories-new_76c83334.png',
     links: [
       { label: 'اطلع على الملفات', url: 'https://drive.google.com/drive/folders/1-jxiAgL1w8XcBHDY8rO64JcAL4Nk41SN', target: '_blank' }
     ]
