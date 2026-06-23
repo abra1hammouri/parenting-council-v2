@@ -78,9 +78,9 @@ export default function Files() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F8E6BC' }}>
       {/* Main Content */}
-      <main className="flex-1 pt-32 pb-20 bg-white">
+      <main className="flex-1 pt-32 pb-20" style={{ backgroundColor: '#F8E6BC' }}>
         <div className="container">
           {/* Page Title */}
           <div className="mb-16 text-center">
