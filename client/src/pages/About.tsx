@@ -116,20 +116,7 @@ export default function About() {
             </p>
           </div>
 
-          {/* CTA Section */}
-          <div className="bg-gradient-to-r from-primary to-orange-500 rounded-2xl shadow-xl p-8 sm:p-12 text-center text-white">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4" style={{ fontFamily: "'Raqaa', serif" }}>
-              هل تريد التواصل معنا؟
-            </h2>
-            <p className="text-lg mb-8 opacity-90">
-              تابعنا على وسائل التواصل الاجتماعي أو تواصل معنا مباشرة
-            </p>
-            <Link href="/contact">
-              <a className="inline-block px-8 py-3 bg-white text-primary font-bold rounded-lg hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105">
-                تواصل معنا
-              </a>
-            </Link>
-          </div>
+
         </div>
       </div>
     </div>
