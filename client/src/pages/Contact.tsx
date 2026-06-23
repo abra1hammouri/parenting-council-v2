@@ -46,7 +46,7 @@ export default function Contact() {
                 </div>
               </a>
               <p className="text-base md:text-lg font-bold text-gray-800 text-center">WhatsApp</p>
-              <p className="text-gray-600 mt-1 text-xs md:text-sm text-center">+201063070272</p>
+              <p className="text-gray-600 mt-1 text-xs md:text-sm text-center">201063070272</p>
             </div>
 
             {/* YouTube Card */}
