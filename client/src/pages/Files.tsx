@@ -123,7 +123,7 @@ export default function Files() {
                   >
                     {card.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6 line-clamp-3">
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6">
                     {card.description}
                   </p>
 
