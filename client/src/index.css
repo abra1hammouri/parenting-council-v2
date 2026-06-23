@@ -120,7 +120,7 @@
   body {
     @apply bg-background text-foreground font-sans;
     font-family: 'Sakkal Majalla', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
   }
   h1, h2, h3, h4, h5, h6 {
