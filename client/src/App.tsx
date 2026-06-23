@@ -8,12 +8,14 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Files from "./pages/Files";
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/about" component={About} />
       <Route path="/files" component={Files} />
       <Route path="/contact" component={Contact} />
       <Route path="/404" component={NotFound} />
