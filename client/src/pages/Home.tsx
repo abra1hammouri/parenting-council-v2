@@ -135,30 +135,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Tribute Section */}
+        {/* Tribute Section - Fading Card */}
         <section className="w-full flex items-center justify-center px-4 md:px-8 pb-24">
           <div className="w-full max-w-4xl">
-            <div className="bg-white/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/40 shadow-lg">
-              <h2 
-                className="text-2xl md:text-3xl font-black text-primary text-center mb-6"
+            <div 
+              className="bg-white/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/40 shadow-lg tribute-fade"
+            >
+              <p 
+                className="text-base md:text-lg font-bold text-foreground text-center"
                 style={{ fontFamily: "'Raqaa', serif" }}
               >
-                في الذاكرة
-              </h2>
-              <div className="text-center space-y-4">
-                <p 
-                  className="text-lg md:text-xl font-bold text-foreground"
-                  style={{ fontFamily: "'Raqaa', serif" }}
-                >
-                  أسماء خالد
-                </p>
-                <p className="text-base md:text-lg text-foreground leading-relaxed">
-                  دعواتكم لزميلتنا أسماء خالد بالرحمة والغفران، وأن يسكنها الله فسيح جناته، وأن يلهم أهلها وذويها الصبر والسلوان.
-                </p>
-                <p className="text-sm md:text-base text-foreground/70 italic">
-                  "إنا لله وإنا إليه راجعون"
-                </p>
-              </div>
+                لا تنسوا زميلتنا أسماء خالد، ربنا يرحمها ويغفرلها ويسكنها فسيح جناته
+              </p>
             </div>
           </div>
         </section>
@@ -171,7 +159,7 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Blinking cursor animation */}
+      {/* Blinking cursor animation and tribute fade */}
       <style>{`
         @keyframes blink {
           0%, 49% {
@@ -180,6 +168,25 @@ export default function Home() {
           50%, 100% {
             opacity: 0;
           }
+        }
+        
+        @keyframes tributeFade {
+          0% {
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+        
+        .tribute-fade {
+          animation: tributeFade 8s ease-in-out 1;
         }
       `}</style>
     </div>
