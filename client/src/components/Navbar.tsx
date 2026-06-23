@@ -21,16 +21,16 @@ export default function Navbar() {
         
         {/* Desktop Menu */}
         <div className="hidden lg:flex gap-2">
-          <a href="/" className="text-base lg:text-lg text-foreground hover:text-primary px-4 py-2 rounded-lg hover:bg-primary/10 smooth-transition">
+          <a href="/" className="text-base lg:text-lg text-foreground hover:text-primary px-4 py-2 rounded-lg hover:bg-primary/10 transition-all duration-200">
             الرئيسية
           </a>
-          <a href="/about" className="text-base lg:text-lg text-foreground hover:text-primary px-4 py-2 rounded-lg hover:bg-primary/10 smooth-transition">
+          <a href="/about" className="text-base lg:text-lg text-foreground hover:text-primary px-4 py-2 rounded-lg hover:bg-primary/10 transition-all duration-200">
             عن المجلس
           </a>
-          <a href="/files" className="text-base lg:text-lg text-foreground hover:text-primary px-4 py-2 rounded-lg hover:bg-primary/10 smooth-transition">
+          <a href="/files" className="text-base lg:text-lg text-foreground hover:text-primary px-4 py-2 rounded-lg hover:bg-primary/10 transition-all duration-200">
             الملفات
           </a>
-          <a href="/contact" className="text-base lg:text-lg text-foreground hover:text-primary px-4 py-2 rounded-lg hover:bg-primary/10 smooth-transition">
+          <a href="/contact" className="text-base lg:text-lg text-foreground hover:text-primary px-4 py-2 rounded-lg hover:bg-primary/10 transition-all duration-200">
             اتصل بنا
           </a>
         </div>
