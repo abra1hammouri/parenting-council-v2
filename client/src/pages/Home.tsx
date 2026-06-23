@@ -99,7 +99,7 @@ export default function Home() {
         </section>
 
         {/* Video Section - Below Text with Professional Edges */}
-        <section className="w-full flex items-center justify-center px-4 md:px-8 pb-24">
+        <section className="w-full flex items-center justify-center px-4 md:px-8 pb-12">
           <div className="relative w-full max-w-4xl">
             {/* Video Container with Professional Styling */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/40">
@@ -132,6 +132,34 @@ export default function Home() {
                 <Volume2 className="w-6 h-6 text-gray-800" />
               )}
             </button>
+          </div>
+        </section>
+
+        {/* Tribute Section */}
+        <section className="w-full flex items-center justify-center px-4 md:px-8 pb-24">
+          <div className="w-full max-w-4xl">
+            <div className="bg-white/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/40 shadow-lg">
+              <h2 
+                className="text-2xl md:text-3xl font-black text-primary text-center mb-6"
+                style={{ fontFamily: "'Raqaa', serif" }}
+              >
+                في الذاكرة
+              </h2>
+              <div className="text-center space-y-4">
+                <p 
+                  className="text-lg md:text-xl font-bold text-foreground"
+                  style={{ fontFamily: "'Raqaa', serif" }}
+                >
+                  أسماء خالد
+                </p>
+                <p className="text-base md:text-lg text-foreground leading-relaxed">
+                  دعواتكم لزميلتنا أسماء خالد بالرحمة والغفران، وأن يسكنها الله فسيح جناته، وأن يلهم أهلها وذويها الصبر والسلوان.
+                </p>
+                <p className="text-sm md:text-base text-foreground/70 italic">
+                  "إنا لله وإنا إليه راجعون"
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
