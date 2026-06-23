@@ -109,14 +109,14 @@ export default function Files() {
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
 
                 {/* Card Content */}
-                <div className="p-4 sm:p-6">
+                <div className="p-4 sm:p-6 text-center">
                   <h3 
                     className="text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-3"
                     style={{ fontFamily: "'Raqaa', serif" }}
@@ -128,7 +128,7 @@ export default function Files() {
                   </p>
 
                   {/* Links */}
-                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                  <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
                     {card.links.map((link, idx) => (
                       <a
                         key={idx}
