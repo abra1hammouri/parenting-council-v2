@@ -44,8 +44,8 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Header */}
       <header className="fixed top-0 right-0 left-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-        <nav className="container flex justify-between items-center py-4">
-          <div className="flex gap-8">
+        <nav className="container flex flex-row-reverse justify-between items-center py-4">
+          <div className="flex gap-8 flex-row-reverse">
             <a href="/" className="text-foreground hover:text-primary transition-colors">
               الرئيسية
             </a>
