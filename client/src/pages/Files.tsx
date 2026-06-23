@@ -80,7 +80,7 @@ export default function Files() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       {/* Main Content */}
-      <main className="flex-1 pt-32 pb-20 bg-secondary/30">
+      <main className="flex-1 pt-32 pb-20" style={{ backgroundColor: '#F8E6BC' }}>
         <div className="container">
           {/* Page Title */}
           <div className="mb-16 text-center">
@@ -100,7 +100,7 @@ export default function Files() {
             {cards.map((card) => (
               <div
                 key={card.id}
-                className="group relative overflow-hidden rounded-xl bg-secondary shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
                 onMouseEnter={() => setHoveredCard(card.id)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
