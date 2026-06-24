@@ -206,7 +206,7 @@ function vitePluginStorageProxy(): Plugin {
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
 export default defineConfig({
-  base: process.env.NODE_ENV === "production" ? "/parenting-council-v2/" : "/",
+  base: "/",
   plugins,
   resolve: {
     alias: {
